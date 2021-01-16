@@ -3,6 +3,7 @@ import DateFormatter from './date-formatter'
 import CoverImage from './cover-image'
 import Link from 'next/link'
 import Author from '../types/author'
+import { postRoute } from './routes'
 
 type Props = {
   title: string
@@ -29,7 +30,7 @@ const HeroPost = ({
       <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
         <div>
           <h3 className="mb-4 text-4xl lg:text-6xl leading-tight">
-            <Link as={`/posts/${slug}`} href="/posts/[slug]">
+            <Link href={postRoute(slug)}>
               <a className="hover:underline">{title}</a>
             </Link>
           </h3>
