@@ -1,5 +1,6 @@
 import cn from 'classnames'
 import Link from 'next/link'
+import { postRoute } from './routes'
 
 type Props = {
   title: string
@@ -20,7 +21,7 @@ const CoverImage = ({ title, src, slug }: Props) => {
   return (
     <div className="sm:mx-0">
       {slug ? (
-        <Link as={`/posts/${slug}`} href="/posts/[slug]">
+        <Link href={postRoute(slug)}>
           <a aria-label={title}>{image}</a>
         </Link>
       ) : (
