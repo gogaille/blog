@@ -6,7 +6,14 @@ type Props = {
   preview?: boolean
 }
 
+/**
+ * TODO: This component seems to be useless as we have (for now) no preview node
+ */
 const Alert = ({ preview }: Props) => {
+  if (!preview) {
+    return null;
+  }
+
   return (
     <div
       className={cn('border-b', {
