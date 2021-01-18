@@ -1,4 +1,4 @@
-import { BLOG_TITLE, BLOG_SUBTITLE } from '../lib/constants'
+import { BLOG_TITLE, BLOG_SUBTITLE } from "../lib/constants";
 
 const Intro = () => {
   return (
@@ -10,7 +10,7 @@ const Intro = () => {
         {BLOG_SUBTITLE}
       </h4>
     </section>
-  )
-}
+  );
+};
 
-export default Intro
+export default Intro;

@@ -1,22 +1,22 @@
-import fs from 'fs';
-import Container from '../components/container'
-import MoreStories from '../components/more-stories'
-import HeroPost from '../components/hero-post'
-import Intro from '../components/intro'
-import Layout from '../components/layout'
-import { getAllPosts } from '../lib/api'
-import Head from 'next/head'
-import { BLOG_TITLE } from '../lib/constants'
-import Post from '../types/post'
-import { generateFeed } from '../lib/feed';
+import fs from "fs";
+import Container from "../components/container";
+import MoreStories from "../components/more-stories";
+import HeroPost from "../components/hero-post";
+import Intro from "../components/intro";
+import Layout from "../components/layout";
+import { getAllPosts } from "../lib/api";
+import Head from "next/head";
+import { BLOG_TITLE } from "../lib/constants";
+import Post from "../types/post";
+import { generateFeed } from "../lib/feed";
 
 type Props = {
-  allPosts: Post[]
-}
+  allPosts: Post[];
+};
 
 const Index = ({ allPosts }: Props) => {
-  const heroPost = allPosts[0]
-  const morePosts = allPosts.slice(1)
+  const heroPost = allPosts[0];
+  const morePosts = allPosts.slice(1);
   return (
     <>
       <Layout>
@@ -39,10 +39,10 @@ const Index = ({ allPosts }: Props) => {
         </Container>
       </Layout>
     </>
-  )
-}
+  );
+};
 
-export default Index
+export default Index;
 
 export const getStaticProps = async () => {
   const publicPath = process.env.PUBLIC_PATH || "";
@@ -51,19 +51,19 @@ export const getStaticProps = async () => {
   }
 
   const allPosts = getAllPosts([
-    'title',
-    'date',
-    'slug',
-    'author',
-    'coverImage',
-    'excerpt',
-  ])
+    "title",
+    "date",
+    "slug",
+    "author",
+    "coverImage",
+    "excerpt",
+  ]);
 
   // @ts-expect-error: TODO: The return type of getAllPosts is broken
-  const feed = await generateFeed(allPosts, publicPath)
-  fs.writeFileSync('./public/feed/rss.xml', feed.rss2())
+  const feed = await generateFeed(allPosts, publicPath);
+  fs.writeFileSync("./public/feed/rss.xml", feed.rss2());
 
   return {
     props: { allPosts },
-  }
-}
+  };
+};
