@@ -1,16 +1,10 @@
 import { Feed as FeedBuilder } from "feed";
 import { BLOG_TITLE, META_DESCRIPTION } from "./constants";
 import { postRoute } from "../components/routes";
+import { PostSummary } from "../types/post";
 
 export function generateFeed(
-  allPosts: Array<{
-    title: string;
-    date: string;
-    slug: string;
-    author: { name: string };
-    coverImage: string;
-    excerpt: string;
-  }>,
+  allPosts: Array<PostSummary>,
   publicPath: string,
 ): FeedBuilder {
   const feed = new FeedBuilder({
