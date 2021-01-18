@@ -1,16 +1,17 @@
-import Author from "./author";
+import { Author } from "./author";
 
-type PostType = {
+export interface PostSummary {
   slug: string;
   title: string;
-  date: string;
-  coverImage: string;
-  author: Author;
   excerpt: string;
+  coverImage: string;
   ogImage: {
     url: string;
   };
-  content: string;
-};
+  date: string;
+  author: Author;
+}
 
-export default PostType;
+export interface Post extends PostSummary {
+  content: string;
+}
