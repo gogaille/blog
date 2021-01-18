@@ -13,12 +13,15 @@ export function generateFeed(
     title: BLOG_TITLE,
     description: META_DESCRIPTION,
     copyright: "© Gogaille",
+    ttl: 24,
   });
 
   allPosts.forEach(({ title, excerpt, date, coverImage, slug, author }) => {
+    const postLink = publicPath + postRoute(slug);
+
     feed.addItem({
-      id: slug,
-      link: postRoute(slug),
+      guid: postLink,
+      link: postLink,
       title: title,
       description: excerpt,
       image: `${publicPath}${coverImage}`,

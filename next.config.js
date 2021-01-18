@@ -5,6 +5,6 @@ if (!publicPath) {
 
 module.exports = {
   env: {
-    PUBLIC_PATH: publicPath,
+    PUBLIC_PATH: publicPath.trim().replace(/\/$/, ""),
   },
 };
