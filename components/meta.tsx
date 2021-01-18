@@ -1,5 +1,5 @@
-import Head from 'next/head'
-import { HOME_OG_IMAGE_URL, META_DESCRIPTION } from '../lib/constants'
+import Head from "next/head";
+import { HOME_OG_IMAGE_URL, META_DESCRIPTION } from "../lib/constants";
 
 const Meta = () => {
   return (
@@ -35,7 +35,7 @@ const Meta = () => {
       <meta name="description" content={META_DESCRIPTION} />
       <meta property="og:image" content={HOME_OG_IMAGE_URL} />
     </Head>
-  )
-}
+  );
+};
 
-export default Meta
+export default Meta;

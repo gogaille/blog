@@ -1,5 +1,5 @@
-import Container from './container'
-import { rssFeedRoute } from './routes'
+import Container from "./container";
+import { rssFeedRoute } from "./routes";
 
 const Footer = () => {
   return (
@@ -10,10 +10,7 @@ const Footer = () => {
             We redefine the Hospitality world with the latest techs.
           </h3>
           <div className="flex flex-col lg:flex-row justify-end items-center lg:pl-4 lg:w-1/2">
-            <a
-              href={rssFeedRoute()}
-              className="mx-3 font-bold hover:underline"
-            >
+            <a href={rssFeedRoute()} className="mx-3 font-bold hover:underline">
               RSS Feed
             </a>
             <a
@@ -26,7 +23,7 @@ const Footer = () => {
         </div>
       </Container>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
