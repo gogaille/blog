@@ -21,6 +21,7 @@ const MoreStories = ({ posts: postSummaries }: Props) => {
             author={onePostSummary.author}
             slug={onePostSummary.slug}
             excerpt={onePostSummary.excerpt}
+            readingTime={onePostSummary.readingTime}
           />
         ))}
       </div>

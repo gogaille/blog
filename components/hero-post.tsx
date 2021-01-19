@@ -4,6 +4,7 @@ import CoverImage from "./cover-image";
 import Link from "next/link";
 import { Author } from "../types/author";
 import { postRoute } from "./routes";
+import ReadingTime from "./reading-time";
 
 type Props = {
   title: string;
@@ -12,6 +13,7 @@ type Props = {
   excerpt: string;
   author: Author;
   slug: string;
+  readingTime: string;
 };
 
 const HeroPost = ({
@@ -21,6 +23,7 @@ const HeroPost = ({
   excerpt,
   author,
   slug,
+  readingTime,
 }: Props) => {
   return (
     <section>
@@ -36,6 +39,7 @@ const HeroPost = ({
           </h3>
           <div className="mb-4 md:mb-0 text-lg">
             <DateFormatter dateString={date} />
+            <ReadingTime text={readingTime} />
           </div>
         </div>
         <div>
