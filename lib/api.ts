@@ -1,6 +1,7 @@
 import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
+import readingTime from "reading-time";
 import { Post, PostSummary, guardPostPayload } from "../types/post";
 
 const postsDirectory = join(process.cwd(), "_posts");
@@ -18,7 +19,7 @@ export function getPostBySlug(slug: string): Post {
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data: headers, content: contentInMarkdown } = matter(fileContents);
 
-  const postPayload = {
+  const postPayload: Post = {
     slug,
     lang: headers.lang,
     title: headers.title,
@@ -28,6 +29,7 @@ export function getPostBySlug(slug: string): Post {
     date: headers.date,
     author: headers.author,
     content: contentInMarkdown,
+    readingTime: readingTime(contentInMarkdown).text,
   };
 
   guardPostPayload(postPayload);
@@ -49,6 +51,7 @@ export function getPostSummaryByFilename(filename: string): PostSummary {
     ogImage,
     date,
     author,
+    readingTime,
   } = getPostByFilename(filename);
 
   const postSummary = {
@@ -60,6 +63,7 @@ export function getPostSummaryByFilename(filename: string): PostSummary {
     ogImage,
     date,
     author,
+    readingTime,
   };
 
   return postSummary;

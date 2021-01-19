@@ -12,6 +12,7 @@ export interface PostSummary {
   };
   date: string;
   author: Author;
+  readingTime: string;
 }
 
 export interface Post extends PostSummary {
@@ -39,6 +40,7 @@ const postSchema = Joi.object({
   })
     .options({ presence: "required" })
     .unknown(false),
+  readingTime: Joi.string(),
 })
   .options({ presence: "required" })
   .unknown(false);
