@@ -1,7 +1,7 @@
 import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
-import { Post, PostSummary } from "../types/post";
+import { Post, PostSummary, guardPostPayload } from "../types/post";
 
 const postsDirectory = join(process.cwd(), "_posts");
 
@@ -18,9 +18,9 @@ export function getPostBySlug(slug: string): Post {
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data: headers, content: contentInMarkdown } = matter(fileContents);
 
-  // TODO: Add a validation for each header fields
-  const post = {
+  const postPayload = {
     slug,
+    lang: headers.lang,
     title: headers.title,
     excerpt: headers.excerpt,
     coverImage: headers.coverImage,
@@ -30,7 +30,9 @@ export function getPostBySlug(slug: string): Post {
     content: contentInMarkdown,
   };
 
-  return post;
+  guardPostPayload(postPayload);
+
+  return postPayload;
 }
 
 export function getPostByFilename(filename: string): Post {
@@ -39,6 +41,7 @@ export function getPostByFilename(filename: string): Post {
 
 export function getPostSummaryByFilename(filename: string): PostSummary {
   const {
+    lang,
     slug,
     title,
     excerpt,
@@ -49,6 +52,7 @@ export function getPostSummaryByFilename(filename: string): PostSummary {
   } = getPostByFilename(filename);
 
   const postSummary = {
+    lang,
     slug,
     title,
     excerpt,
