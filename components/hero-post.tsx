@@ -7,6 +7,7 @@ import { postRoute } from "./routes";
 import ReadingTime from "./reading-time";
 
 type Props = {
+  lang: string;
   title: string;
   coverImage: string;
   date: string;
@@ -17,6 +18,7 @@ type Props = {
 };
 
 const HeroPost = ({
+  lang,
   title,
   coverImage,
   date,
@@ -26,7 +28,7 @@ const HeroPost = ({
   readingTime,
 }: Props) => {
   return (
-    <section>
+    <section lang={lang}>
       <div className="mb-8 md:mb-16">
         <CoverImage title={title} src={coverImage} slug={slug} />
       </div>

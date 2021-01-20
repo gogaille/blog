@@ -28,6 +28,7 @@ const Index = ({ allPosts }: Props) => {
           <Intro />
           {heroPost && (
             <HeroPost
+              lang={heroPost.lang}
               title={heroPost.title}
               coverImage={heroPost.coverImage}
               date={heroPost.date}
