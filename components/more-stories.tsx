@@ -15,6 +15,7 @@ const MoreStories = ({ posts: postSummaries }: Props) => {
         {postSummaries.map((onePostSummary) => (
           <PostPreview
             key={onePostSummary.slug}
+            lang={onePostSummary.lang}
             title={onePostSummary.title}
             coverImage={onePostSummary.coverImage}
             date={onePostSummary.date}
