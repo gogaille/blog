@@ -1,5 +1,5 @@
 import PostPreview from "./post-preview";
-import { PostSummary } from "../types/post";
+import { PostSummary } from "../domain/post";
 
 type Props = {
   posts: Array<PostSummary>;

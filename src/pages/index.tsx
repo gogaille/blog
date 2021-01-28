@@ -7,7 +7,7 @@ import Layout from "../components/layout";
 import { getAllPostSummaries } from "../lib/api";
 import Head from "next/head";
 import { BLOG_TITLE } from "../lib/constants";
-import { PostSummary } from "../types/post";
+import { PostSummary } from "../domain/post";
 import { generateFeed } from "../lib/feed";
 
 type Props = {

@@ -2,7 +2,7 @@ import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
 import readingTime from "reading-time";
-import { Post, PostSummary, guardPostPayload } from "../types/post";
+import { Post, PostSummary, guardPostPayload } from "../domain/post";
 
 const postsDirectory = join(process.cwd(), "_posts");
 
