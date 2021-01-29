@@ -7,7 +7,7 @@ import Layout from "../../components/layout";
 import { getPostBySlug, getAllPostSummaries } from "../../lib/api";
 import { BLOG_TITLE } from "../../lib/constants";
 import markdownToHtml from "../../lib/markdownToHtml";
-import { Post as PostType } from "../../types/post";
+import { Post as PostType } from "../../domain/post";
 
 type Props = {
   post: PostType;
