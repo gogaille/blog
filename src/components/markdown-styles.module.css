@@ -16,3 +16,15 @@
 .markdown h3 {
   @apply text-2xl mt-8 mb-4 leading-snug;
 }
+
+.markdown img {
+  @apply shadow-small;
+}
+
+.markdown a img {
+  @apply shadow-small hover:shadow-medium transition-shadow duration-200;
+}
+
+.markdown pre {
+  @apply rounded-none shadow-small;
+}

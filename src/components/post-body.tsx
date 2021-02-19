@@ -1,3 +1,4 @@
+import classnames from "classnames";
 import markdownStyles from "./markdown-styles.module.css";
 
 type Props = {
@@ -6,9 +7,12 @@ type Props = {
 
 const PostBody = ({ content }: Props) => {
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="max-w-2xl mx-auto prose max-w-none prose-2xl">
       <div
-        className={markdownStyles["markdown"]}
+        className={classnames(
+          markdownStyles["markdown"],
+          "prose max-w-none prose-2xl",
+        )}
         dangerouslySetInnerHTML={{ __html: content }}
       />
     </div>

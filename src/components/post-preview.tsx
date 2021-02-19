@@ -37,11 +37,11 @@ const PostPreview = ({
           <a className="hover:underline">{title}</a>
         </Link>
       </h3>
-      <div className="text-lg mb-4">
+      <div className="text-lg mb-4 prose max-w-none">
         <DateFormatter dateString={date} />
         <ReadingTime text={readingTime} />
       </div>
-      <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
+      <p className="text-lg leading-relaxed mb-4 prose max-w-none">{excerpt}</p>
       <Avatar name={author.name} picture={author.picture} />
     </div>
   );
