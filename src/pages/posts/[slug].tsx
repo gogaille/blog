@@ -9,6 +9,8 @@ import { BLOG_TITLE } from "../../lib/constants";
 import markdownToHtml from "../../lib/markdownToHtml";
 import { Post as PostType } from "../../domain/post";
 
+import "highlight.js/styles/hybrid.css";
+
 type Props = {
   post: PostType;
 };

@@ -39,13 +39,15 @@ const HeroPost = ({
               <a className="hover:underline">{title}</a>
             </Link>
           </h3>
-          <div className="mb-4 md:mb-0 text-lg">
+          <div className="mb-4 md:mb-0 text-lg prose max-w-none">
             <DateFormatter dateString={date} />
             <ReadingTime text={readingTime} />
           </div>
         </div>
         <div>
-          <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
+          <p className="text-lg leading-relaxed mb-4 prose max-w-none">
+            {excerpt}
+          </p>
           <Avatar name={author.name} picture={author.picture} />
         </div>
       </div>
