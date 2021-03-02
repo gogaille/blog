@@ -77,7 +77,7 @@ As this definition is personal, your team will need to have its own definition t
 Up to 2011, [ISO 9126](https://en.wikipedia.org/wiki/ISO/IEC_9126) definition was:
 > Capability of a software product to conform to requirements.
 
-No comment, very synthetic, not so useful. But wait, since that [ISO 25010](https://iso25000.com/index.php/en/iso-25000-standards/iso-25010) has refined the definition 🎉:
+No comment, very synthetic, not so useful. But wait, since that [ISO 25010](https://iso25000.com/index.php/en/iso-25000-standards/iso-25010) has refined the definition🎉:
 
 > The quality of a system is the degree to which the system satisfies the stated and implied needs of its various stakeholders, and thus provides value. Those stakeholders' needs (functionality, performance, security, maintainability, etc.) are precisely what is represented in the quality model, which categorizes the product quality into characteristics and sub-characteristics.
 
@@ -93,7 +93,7 @@ Hey, don't forget that quality processes in software are vastly inspired from ol
 
 [Introduced by Bill Smith at Motorola](https://en.wikipedia.org/wiki/Six_Sigma), Six Sigma qualifies processes that lead to a 99.99966% free of defects production.
 
-<img src="/assets/blog/redefining-software-quality/om_droit_au_but.png" alt="Olympique de Marseille soccer team baseline" width="100" style="float: right;"/>
+<img class="float-right" src="/assets/blog/redefining-software-quality/om_droit_au_but.png" alt="Olympique de Marseille soccer team baseline" width="100"/>
 
 We've retained that quality is a question of **continuous measurement** on one side and **clearly defined goals** on the other side. It's straight to the point. As I live in ⚽ Olympique de Marseille soccer team's city I appreciate a lot.
 

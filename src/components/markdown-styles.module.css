@@ -38,8 +38,16 @@
   @apply shadow-small hover:shadow-medium transition-shadow duration-200;
 }
 
-.markdown img {
+.markdown img:not(:global .float-right) {
   @apply m-auto;
+}
+
+.markdown :global img.float-right {
+  @apply m-0 ml-4;
+}
+
+.markdown :global img.float-left {
+  @apply m-0 mr-4;
 }
 
 .markdown pre {
