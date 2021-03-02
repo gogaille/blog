@@ -1,5 +1,5 @@
 export const BLOG_URL = process.env.PUBLIC_PATH;
-export const BLOG_TITLE = "Gogaille Tech Blog";
-export const BLOG_SUBTITLE = "Our own skyblog.";
+export const BLOG_TITLE = "Build Gogaille";
+export const BLOG_SUBTITLE = "We redefine the Hospitality world with the latest techs.";
 
-export const META_DESCRIPTION = "Our own skyblog.";
+export const META_DESCRIPTION = "We redefine the Hospitality world with the latest techs.";

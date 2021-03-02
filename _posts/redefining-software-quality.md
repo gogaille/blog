@@ -17,7 +17,7 @@ ogImage:
 
 ## Do we have to introduce software quality yet?
 
-In recent years many teams has adopted QA thanks to plug & play affordable [CI/CD](https://en.wikipedia.org/wiki/CI/CD) solutions. It's almost a convenience now. Also [DevOps](https://en.wikipedia.org/wiki/DevOps) then [DevSecOps](https://en.wikipedia.org/wiki/DevOps#DevSecOps,_Shifting_Security_Left) have contributed to have Quality as a culture as everybody's became a stakeholder! I bet next gen developers could be qualified as "quality natives"
+In recent years many teams have adopted QA thanks to plug & play affordable [CI/CD](https://en.wikipedia.org/wiki/CI/CD) solutions. It's almost a convenience now. Also [DevOps](https://en.wikipedia.org/wiki/DevOps) then [DevSecOps](https://en.wikipedia.org/wiki/DevOps#DevSecOps,_Shifting_Security_Left) have contributed to have Quality as a culture as everybody's became a stakeholder! I bet next gen developers could be qualified as "quality natives"
 
 However, when I search on internet, I'm disappointed because I mainly find:
 
@@ -26,7 +26,7 @@ However, when I search on internet, I'm disappointed because I mainly find:
 
 Come on guys:
 - Few teams only are (or will get) certified on ISO software quality standards.
-- With QA, most people use tools that help achieving a goal, but don't deeply understand why they use thm.
+- With QA, most people use tools that help achieving a goal, but don't deeply understand why they use them.
 
 And this is the problem : quality is more a mantra than a tool that you plug or just processes. That's what we will see. So yes, let's re-introduce software quality!  🎉
 
@@ -74,10 +74,10 @@ As this definition is personal, your team will need to have its own definition t
 
 ### ISO
 
-up to 2011, [ISO 9126](https://en.wikipedia.org/wiki/ISO/IEC_9126) definition was:
+Up to 2011, [ISO 9126](https://en.wikipedia.org/wiki/ISO/IEC_9126) definition was:
 > Capability of a software product to conform to requirements.
 
-No comment, very synthetic, not so useful. But wait, since that [ISO 25010](https://iso25000.com/index.php/en/iso-25000-standards/iso-25010) has refined the definition🎉:
+No comment, very synthetic, not so useful. But wait, since that [ISO 25010](https://iso25000.com/index.php/en/iso-25000-standards/iso-25010) has refined the definition 🎉:
 
 > The quality of a system is the degree to which the system satisfies the stated and implied needs of its various stakeholders, and thus provides value. Those stakeholders' needs (functionality, performance, security, maintainability, etc.) are precisely what is represented in the quality model, which categorizes the product quality into characteristics and sub-characteristics.
 
@@ -101,14 +101,14 @@ We've retained that quality is a question of **continuous measurement** on one s
 
 This is [a set of 14 principles](https://en.wikipedia.org/wiki/The_Toyota_Way). It focuses on 2 key areas:
 
-1. Continuous improvement → incremental, never ending;
+1. continuous improvement → incremental, never ending;
 2. respect for people → great people produces great value.
 
-Worth to mention that Toyota became the world's number one car maker in 2007 and remains in top 3 since that time 😉. Here's my personal curation of things that makes a lot of sense across the 14 principles:
+Worth to mention that Toyota became the world's number one car maker in 2007 and remains in top 3 since that time 😉. Here's my personal curation of things that make a lot of sense across the 14 principles:
 - Long-term philosophy: people need a purpose to find motivation and establish goals.
 - The right process will produce the right results:
-  - eliminate wastes (7 identified types).
-  - Build a culture of stopping to fix problems, to get quality right the first time.
+  - eliminate wastes (7 identified types);
+  - build a culture of stopping to fix problems, to get quality right the first time.
 
 So here we learn that **long-term** and **culture** are key regarding quality. And of course - not a surprise - **people** and their implication is crucial!
 
