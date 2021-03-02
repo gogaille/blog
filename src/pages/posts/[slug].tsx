@@ -1,11 +1,11 @@
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 import Container from "../../components/container";
 import PostBody from "../../components/post-body";
 import Header from "../../components/header";
 import PostHeader from "../../components/post-header";
 import Layout from "../../components/layout";
 import { getPostBySlug, getAllPostSummaries } from "../../lib/api";
-import { BLOG_TITLE } from "../../lib/constants";
+import { BLOG_URL } from "../../lib/constants";
 import markdownToHtml from "../../lib/markdownToHtml";
 import { Post as PostType } from "../../domain/post";
 
@@ -20,13 +20,33 @@ const Post = ({ post }: Props) => {
     <Layout>
       <Container>
         <Header />
+
+        <NextSeo
+          title={post.title}
+          description={post.excerpt}
+          canonical={`${BLOG_URL}/post/${post.slug}`}
+          openGraph={{
+            type: "article",
+            title: post.title,
+            description: post.excerpt,
+            url: `${BLOG_URL}/post/${post.slug}`,
+            article: {
+              publishedTime: post.date,
+            },
+            images: [
+              {
+                url: `${BLOG_URL}${post.coverImage}`,
+                alt: post.coverImageAlt,
+              },
+            ],
+          }}
+          twitter={{
+            cardType: "summary_large_image",
+            handle: post.author.twitterHandle,
+          }}
+        />
+
         <article className="mb-32" lang={post.lang}>
-          <Head>
-            <title>
-              {post.title} | {BLOG_TITLE}
-            </title>
-            <meta property="og:image" content={post.ogImage.url} />
-          </Head>
           <PostHeader
             title={post.title}
             coverImage={post.coverImage}

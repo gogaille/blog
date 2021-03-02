@@ -21,9 +21,6 @@ const Index = ({ allPosts }: Props) => {
   return (
     <>
       <Layout>
-        <Head>
-          <title>{BLOG_TITLE}</title>
-        </Head>
         <Container>
           <Intro />
           {heroPost && (
