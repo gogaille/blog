@@ -14,29 +14,16 @@
   @apply underline;
 }
 
-/* Lists */
-.markdown ul,
-.markdown ol {
-  @apply mb-4 ml-8;
-}
-.markdown li > p,
-.markdown li > ul,
-.markdown li > ol {
-  @apply mb-0;
-}
-.markdown ol {
-  @apply list-decimal;
-}
-.markdown ul {
-  @apply list-disc;
-}
-
 .markdown blockquote {
-  @apply p-2 mx-0 bg-gray-100 mb-4 border-l-4 border-blue-600 italic;
+  @apply p-4 mx-0 bg-primary text-white mb-4 border-l-4 border-secondary italic;
 }
 
 .markdown blockquote > p {
   @apply my-1;
+}
+
+.markdown blockquote > p strong {
+  @apply text-white font-bold;
 }
 
 .markdown h2 {
@@ -47,12 +34,12 @@
   @apply text-2xl mt-8 mb-4 leading-snug;
 }
 
-.markdown img {
-  @apply shadow-small;
-}
-
 .markdown a img {
   @apply shadow-small hover:shadow-medium transition-shadow duration-200;
+}
+
+.markdown img {
+  @apply m-auto;
 }
 
 .markdown pre {
