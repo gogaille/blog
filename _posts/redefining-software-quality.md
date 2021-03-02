@@ -3,12 +3,12 @@ lang: "en"
 title: "Redefining Software Quality"
 excerpt: "Have you already wondering about your quality processes in place and their origins? 🤔 If not,it's time to ask yourself about why 😉. Maybe you also want to start (over) software quality in your organization. This article is also for you."
 coverImage: "/assets/blog/redefining-software-quality/cover.jpg"
+coverImageAlt: "Best service illustration"
 date: "2021-03-02T10:01:00.322Z"
 author:
   name: Sébastien HOUZÉ
   picture: "/assets/blog/authors/shouze.jpeg"
-ogImage:
-  url: "/assets/blog/redefining-software-quality/cover.jpg"
+  twitterHandle: "@sebastienhouze"
 ---
 
 
