@@ -7,9 +7,7 @@ export interface PostSummary {
   title: string;
   excerpt: string;
   coverImage: string;
-  ogImage: {
-    url: string;
-  };
+  coverImageAlt: string;
   date: string;
   author: Author;
   readingTime: string;
@@ -28,15 +26,12 @@ const postSchema = Joi.object({
   content: Joi.string(),
   excerpt: Joi.string(),
   coverImage: Joi.string(),
-  ogImage: Joi.object({
-    url: Joi.string(),
-  })
-    .options({ presence: "required" })
-    .unknown(false),
+  coverImageAlt: Joi.string(),
   date: Joi.string().isoDate(),
   author: Joi.object({
     name: Joi.string(),
     picture: Joi.string(),
+    twitterHandle: Joi.string().pattern(/^@[a-zA-Z0-9\-]+$/),
   })
     .options({ presence: "required" })
     .unknown(false),
