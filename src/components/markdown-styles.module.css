@@ -8,30 +8,46 @@
 
 /* Links */
 .markdown a {
-  @apply text-blue-600;
+  @apply text-primary;
 }
 .markdown a:hover {
   @apply underline;
 }
 
 .markdown blockquote {
-  @apply p-4 mx-0 bg-primary text-white mb-4 border-l-4 border-secondary italic;
+  @apply p-4 mx-0 bg-accent-1 text-white mb-4 border-l-4 border-accent-3 italic;
 }
 
 .markdown blockquote > p {
   @apply my-1;
 }
 
+.markdown {
+  @apply text-primary;
+}
+
+.markdown p strong {
+  @apply text-primary;
+}
+
 .markdown blockquote > p strong {
   @apply text-white font-bold;
 }
 
+.markdown h1 {
+  @apply text-primary;
+}
+
 .markdown h2 {
-  @apply text-3xl mt-12 mb-4 leading-snug;
+  @apply text-3xl text-secondary mt-12 mb-4 leading-snug;
 }
 
 .markdown h3 {
-  @apply text-2xl mt-8 mb-4 leading-snug;
+  @apply text-2xl text-tertiary mt-8 mb-4 leading-snug;
+}
+
+.markdown h4 {
+  @apply text-tertiary;
 }
 
 .markdown a img {

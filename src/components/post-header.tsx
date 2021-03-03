@@ -33,7 +33,7 @@ const PostHeader = ({
         <div className="block md:hidden mb-6">
           <Avatar name={author.name} picture={author.picture} />
         </div>
-        <div className="mb-6 text-lg prose max-w-none">
+        <div className="mb-6 text-lg text-tertiary prose max-w-none">
           <DateFormatter dateString={date} />
           <ReadingTime text={readingTime} />
         </div>

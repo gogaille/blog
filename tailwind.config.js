@@ -5,15 +5,22 @@ module.exports = {
     extend: {
       backgroundColor: theme => ({
         ...theme('colors'),
-        "primary": "#10069F",
+        "primary": "#FFFFFF",
+        "secondary": "#FEFCFA",
+        "tertiary": "#F6F2F0",
       }),
       colors: {
-        "accent-1": "#FAFAFA",
-        "accent-2": "#EAEAEA",
-        "accent-7": "#333",
-        "secondary": "#E03C31",
-        success: "#0070f3",
-        cyan: "#79FFE1",
+        // Brand color - nominal
+        "accent-1": "#10069F", // BLUE
+        "accent-2": "#211747", // BLUE DARK
+        "accent-3": "#E03C31", // RED
+        "accent-4": "#A47F74", // BROWN
+        // Brand color - roll over
+        "accent-roll1": "#0D0762", // BLUE OVER
+        "accent-roll2": "#C02F25", // RED OVER
+        "accent-roll3": "#86665E", // BROWN OVER
+        //
+        "button-tertiary-hover": "rgba(255, 255, 255, 0.1)",
       },
       spacing: {
         28: "7rem",
@@ -29,6 +36,17 @@ module.exports = {
         "6xl": "2.75rem",
         "7xl": "4.5rem",
         "8xl": "6.25rem",
+      },
+      borderColor: theme => ({
+        "tertiary": "#DADADA",
+        "tertiary-hover": "rgba(255, 255, 255, 0.1)",
+      }),
+      textColor: {
+        "primary": "#211747", // BLUE DARK
+        "secondary": "#807B96", // GREY
+        "tertiary": "#BCB9C8", // GREY LIGHT
+        "primary-inverted": "#FFFFFF", // WHITE
+        "secondary-inverted": "rgba(255, 255, 255, 0.8)", // WHITE-80
       },
       boxShadow: {
         small: "0 5px 10px rgba(0, 0, 0, 0.12)",
