@@ -1,7 +1,7 @@
 ---
 lang: "en"
 title: "How redefining Software Quality can save your day?"
-excerpt: "Have you already wondering about your quality processes in place and their origins? 🤔 If not,it's time to ask yourself about why 😉. Maybe you also want to start (over) software quality in your organization. This article is also for you."
+excerpt: "Have you already wondering about your quality processes in place and their origins? 🤔 If not, it's time to ask yourself about why 😉. Maybe you also want to start (over) software quality in your organization. This article is also for you."
 coverImage: "/assets/blog/how-redefining-software-quality-can-save-your-day/cover.jpg"
 coverImageAlt: "Best service illustration"
 date: "2021-03-02T10:01:00.322Z"
