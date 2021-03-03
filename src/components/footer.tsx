@@ -1,5 +1,5 @@
 import Container from "./container";
-import { rssFeedRoute } from "./routes";
+import { rssFeedRoute } from "../lib/routes";
 
 const Footer = () => {
   return (

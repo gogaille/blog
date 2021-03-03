@@ -17,7 +17,7 @@ export default function GogailleBlogApp({
         description={META_DESCRIPTION}
         openGraph={{
           type: "website",
-          url: `${BLOG_URL}${router.route}`,
+          url: `${BLOG_URL}${router.asPath}`,
           title: BLOG_TITLE,
           description: META_DESCRIPTION,
         }}
