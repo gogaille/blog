@@ -16,15 +16,15 @@ author:
 
 ## Do we have to introduce software quality yet?
 
-In recent years many teams have adopted QA thanks to plug & play affordable [CI/CD](https://en.wikipedia.org/wiki/CI/CD) solutions. It's almost a convenience now. Also [DevOps](https://en.wikipedia.org/wiki/DevOps) then [DevSecOps](https://en.wikipedia.org/wiki/DevOps#DevSecOps,_Shifting_Security_Left) have contributed to have Quality as a culture as everybody's became a stakeholder! I bet next gen developers could be qualified as "quality natives"
+In recent years many teams have adopted QA thanks to plug & play affordable [CI/CD](https://en.wikipedia.org/wiki/CI/CD) solutions. It's almost a convenience now. Also [DevOps](https://en.wikipedia.org/wiki/DevOps) then [DevSecOps](https://en.wikipedia.org/wiki/DevOps#DevSecOps,_Shifting_Security_Left) have contributed to have Quality as a culture as everybody's became a stakeholder! I bet next gen developers could be qualified as "quality natives".
 
 However, when I search on internet, I'm disappointed because I mainly find:
 
-  1. High level, international standard definitions (ISO 🌐, please certify me 💵)
+  1. High level standard definitions (ISO 🌐, please certify me 💵)
   2. [Quality Assurance](https://en.wikipedia.org/wiki/Quality_assurance) (QA) resources (a lot of noise 🤯)
 
 Come on guys:
-- Few teams only are (or will get) certified on ISO software quality standards.
+- Few teams only are (or will get) ISO certified.
 - With QA, most people use tools that help achieving a goal, but don't deeply understand why they use them.
 
 And this is the problem : quality is more a mantra than a tool that you plug or just processes. That's what we will see. So yes, let's re-introduce software quality!  🎉
@@ -37,7 +37,7 @@ In the early years of computer science - in 1968 - a ["Software crisis"](https:/
 
 > Low quality is like pollution paradox: even polluters don't like to pollute.
 
-But let's go back to our day to day reality. During last 20 years I've seen teams that were delivering a certain level of quality but where not even conscious of this level. Time and budget were the most preponderant factors to deliver software and quality was a third party one. And sometimes it was even considered harmful for (or not included in) time and budget. Maybe because quality is seen by many as a sacred concept, a quest of the absolute.
+But let's go back to our day to day reality. During last 20 years I've seen teams that were delivering a quality level but where not even conscious of this level. Time and budget were the most preponderant factors to deliver software and quality was a third party one. And sometimes it was even considered harmful for (or not included in) time and budget. Maybe because quality is seen by many as a sacred concept, a quest of the absolute.
 
 
 This is why I think that software quality is a necessity... but team members - please de-sacralize quality 🙏. Here's a simple tip on how to do that:
@@ -76,7 +76,7 @@ As this definition is personal, your team will need to have its own definition t
 Up to 2011, [ISO 9126](https://en.wikipedia.org/wiki/ISO/IEC_9126) definition was:
 > Capability of a software product to conform to requirements.
 
-No comment, very synthetic, not so useful. But wait, since that [ISO 25010](https://iso25000.com/index.php/en/iso-25000-standards/iso-25010) has refined the definition🎉:
+No comment, very synthetic, not so useful. But wait, since that [ISO 25010](https://iso25000.com/index.php/en/iso-25000-standards/iso-25010) has refined the definition 🎉:
 
 > The quality of a system is the degree to which the system satisfies the stated and implied needs of its various stakeholders, and thus provides value. Those stakeholders' needs (functionality, performance, security, maintainability, etc.) are precisely what is represented in the quality model, which categorizes the product quality into characteristics and sub-characteristics.
 
