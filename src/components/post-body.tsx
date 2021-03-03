@@ -1,5 +1,7 @@
 import classnames from "classnames";
 import markdownStyles from "./markdown-styles.module.css";
+import ReactUtterences from 'react-utterances';
+
 
 type Props = {
   content: string;
@@ -15,6 +17,7 @@ const PostBody = ({ content }: Props) => {
         )}
         dangerouslySetInnerHTML={{ __html: content }}
       />
+      <ReactUtterences repo={'gogaille/blog'} type={'pathname'} />
     </div>
   );
 };
