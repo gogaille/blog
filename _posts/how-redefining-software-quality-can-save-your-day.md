@@ -1,8 +1,8 @@
 ---
 lang: "en"
-title: "Redefining Software Quality"
+title: "How redefining Software Quality can save your day?"
 excerpt: "Have you already wondering about your quality processes in place and their origins? 🤔 If not,it's time to ask yourself about why 😉. Maybe you also want to start (over) software quality in your organization. This article is also for you."
-coverImage: "/assets/blog/redefining-software-quality/cover.jpg"
+coverImage: "/assets/blog/how-redefining-software-quality-can-save-your-day/cover.jpg"
 coverImageAlt: "Best service illustration"
 date: "2021-03-02T10:01:00.322Z"
 author:
@@ -11,8 +11,7 @@ author:
   twitterHandle: "@sebastienhouze"
 ---
 
-
-# Redefining Software Quality
+# How redefining Software Quality can save your day?
 
 
 ## Do we have to introduce software quality yet?
@@ -62,7 +61,7 @@ So the following definition makes explicit every concept beloved by our team:
 
 To sum up, 7 key concepts that we've decided to own in the team:
 
-![Gogaille tech team: 7 software quality key concepts](/assets/blog/redefining-software-quality/gogaille-software-quality-key-concepts.png)
+![Gogaille tech team: 7 software quality key concepts](/assets/blog/how-redefining-software-quality-can-save-your-day/gogaille-software-quality-key-concepts.png)
 
 
 The only thing that we don't define very well are expectations, as we believe it's a kind of alchemy between domain and software experts.
@@ -83,7 +82,7 @@ No comment, very synthetic, not so useful. But wait, since that [ISO 25010](http
 
 More exhaustive... but very theoretic and small to medium teams that will not get certified at any time in their life will probably never cover all parts, they have to choose their battles. Anyway, the quality model is here to help us:
 
-![ISO 25010 quality model](/assets/blog/redefining-software-quality/iso25010-quality-model.png)
+[![ISO 25010 quality model](/assets/blog/how-redefining-software-quality-can-save-your-day/iso25010-quality-model.png)](/assets/blog/how-redefining-software-quality-can-save-your-day/iso25010-quality-model.png)
 
 ### Other industries than software
 
@@ -93,7 +92,7 @@ Hey, don't forget that quality processes in software are vastly inspired from ol
 
 [Introduced by Bill Smith at Motorola](https://en.wikipedia.org/wiki/Six_Sigma), Six Sigma qualifies processes that lead to a 99.99966% free of defects production.
 
-<img class="float-right" src="/assets/blog/redefining-software-quality/om_droit_au_but.png" alt="Olympique de Marseille soccer team baseline" width="100"/>
+<img class="float-right" src="/assets/blog/how-redefining-software-quality-can-save-your-day/om_droit_au_but.png" alt="Olympique de Marseille soccer team baseline" width="100"/>
 
 We've retained that quality is a question of **continuous measurement** on one side and **clearly defined goals** on the other side. It's straight to the point. As I live in ⚽ Olympique de Marseille soccer team's city I appreciate a lot.
 
