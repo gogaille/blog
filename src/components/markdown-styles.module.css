@@ -42,12 +42,12 @@
   @apply m-auto;
 }
 
-.markdown :global img.float-right {
-  @apply m-0 ml-4;
+.markdown :global img.floating-right {
+  @apply m-0 ml-4 float-right;
 }
 
-.markdown :global img.float-left {
-  @apply m-0 mr-4;
+.markdown :global img.floating-left {
+  @apply m-0 mr-4 float-left;
 }
 
 .markdown pre {

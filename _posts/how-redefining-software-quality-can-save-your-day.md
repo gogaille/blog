@@ -92,7 +92,7 @@ Hey, don't forget that quality processes in software are vastly inspired from ol
 
 [Introduced by Bill Smith at Motorola](https://en.wikipedia.org/wiki/Six_Sigma), Six Sigma qualifies processes that lead to a 99.99966% free of defects production.
 
-<img class="float-right" src="/assets/blog/how-redefining-software-quality-can-save-your-day/om_droit_au_but.png" alt="Olympique de Marseille soccer team baseline" width="100"/>
+<img class="floating-right" src="/assets/blog/how-redefining-software-quality-can-save-your-day/om_droit_au_but.png" alt="Olympique de Marseille soccer team baseline" width="100"/>
 
 We've retained that quality is a question of **continuous measurement** on one side and **clearly defined goals** on the other side. It's straight to the point. As I live in ⚽ Olympique de Marseille soccer team's city I appreciate a lot.
 
