@@ -1,11 +1,20 @@
-const publicPath = process.env.PUBLIC_PATH;
-if (!publicPath) {
-  throw new Error("The PUBLIC_PATH path environment variable is missing.");
+const vercelUrl = process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : null;
+
+const publicPath = process.env.PUBLIC_PATH
+  ? process.env.PUBLIC_PATH.trim().replace(/\/$/, "")
+  : null;
+
+if (!vercelUrl && !publicPath) {
+  throw new Error(
+    "No VERCEL_URL or PUBLIC_PATH environment variables available.",
+  );
 }
 
 module.exports = {
   env: {
-    PUBLIC_PATH: publicPath.trim().replace(/\/$/, ""),
+    PUBLIC_PATH: vercelUrl || publicPath,
   },
   webpack: (config, { dev, isServer }) => {
     // Replace React with Preact only in client production build

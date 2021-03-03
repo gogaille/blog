@@ -6,7 +6,7 @@ import Intro from "../components/intro";
 import Layout from "../components/layout";
 import { getAllPostSummaries } from "../lib/api";
 import Head from "next/head";
-import { BLOG_TITLE } from "../lib/constants";
+import { BLOG_TITLE, BLOG_URL } from "../lib/constants";
 import { PostSummary } from "../domain/post";
 import { generateFeed } from "../lib/feed";
 
@@ -47,7 +47,7 @@ export default Index;
 export const getStaticProps = async () => {
   const allPosts = getAllPostSummaries();
 
-  const feed = await generateFeed(allPosts, process.env.PUBLIC_PATH || "");
+  const feed = await generateFeed(allPosts, BLOG_URL || "");
   fs.writeFileSync("./public/feed/rss.xml", feed.rss2());
 
   return {

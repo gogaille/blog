@@ -8,6 +8,7 @@ import { getPostBySlug, getAllPostSummaries } from "../../lib/api";
 import { BLOG_URL } from "../../lib/constants";
 import markdownToHtml from "../../lib/markdownToHtml";
 import { Post as PostType } from "../../domain/post";
+import { postRoute } from "../../lib/routes";
 
 import "highlight.js/styles/hybrid.css";
 
@@ -24,12 +25,12 @@ const Post = ({ post }: Props) => {
         <NextSeo
           title={post.title}
           description={post.excerpt}
-          canonical={`${BLOG_URL}/post/${post.slug}`}
+          canonical={`${BLOG_URL}${postRoute(post.slug)}`}
           openGraph={{
             type: "article",
             title: post.title,
             description: post.excerpt,
-            url: `${BLOG_URL}/post/${post.slug}`,
+            url: `${BLOG_URL}${postRoute(post.slug)}`,
             article: {
               publishedTime: post.date,
             },
