@@ -1,4 +1,5 @@
 import { NextSeo } from "next-seo";
+import ReactUtterences from "react-utterances";
 import Container from "../../components/container";
 import PostBody from "../../components/post-body";
 import Header from "../../components/header";
@@ -47,7 +48,7 @@ const Post = ({ post }: Props) => {
           }}
         />
 
-        <article className="mb-32" lang={post.lang}>
+        <article className="mb-16" lang={post.lang}>
           <PostHeader
             title={post.title}
             coverImage={post.coverImage}
@@ -57,6 +58,18 @@ const Post = ({ post }: Props) => {
           />
           <PostBody content={post.content} />
         </article>
+
+        <div className="max-w-2xl mx-auto mb-32">
+          <p className="text-3xl text-primary mt-12 mb-4 font-extrabold">
+            Comments
+          </p>
+
+          <ReactUtterences
+            repo={"gogaille/blog"}
+            type={"pathname"}
+            label="discussions"
+          />
+        </div>
       </Container>
     </Layout>
   );

@@ -1,1 +1,1 @@
-declare module 'react-utterances';
+declare module "react-utterances";
