@@ -2,29 +2,90 @@
   @apply text-lg leading-relaxed;
 }
 
-.markdown p,
-.markdown ul,
-.markdown ol,
-.markdown blockquote {
+.markdown p {
   @apply my-6;
 }
 
+/* Links */
+.markdown a {
+  @apply text-primary;
+}
+.markdown a:hover {
+  @apply underline;
+}
+
+.markdown blockquote {
+  @apply p-4 mx-0 bg-accent-1 text-white mb-4 border-l-4 border-accent-3 italic;
+}
+
+.markdown blockquote > p {
+  @apply my-1;
+}
+
+.markdown {
+  @apply text-primary;
+}
+
+.markdown p strong {
+  @apply text-primary;
+}
+
+.markdown blockquote > p strong {
+  @apply text-white font-bold;
+}
+
+.markdown h1 {
+  @apply text-primary;
+}
+
 .markdown h2 {
-  @apply text-3xl mt-12 mb-4 leading-snug;
+  @apply text-3xl text-secondary mt-12 mb-4 leading-snug;
 }
 
 .markdown h3 {
-  @apply text-2xl mt-8 mb-4 leading-snug;
+  @apply text-2xl text-tertiary mt-8 mb-4 leading-snug;
 }
 
-.markdown img {
-  @apply shadow-small;
+.markdown h4 {
+  @apply text-tertiary;
 }
 
 .markdown a img {
   @apply shadow-small hover:shadow-medium transition-shadow duration-200;
 }
 
+.markdown img:not(:global .float-right) {
+  @apply m-auto;
+}
+
+.markdown :global img.floating-right {
+  @apply m-0 ml-4 float-right;
+}
+
+.markdown :global img.floating-left {
+  @apply m-0 mr-4 float-left;
+}
+
 .markdown pre {
   @apply rounded-none shadow-small;
+}
+
+/* Tables */
+.markdown td,
+.markdown th {
+  @apply px-2 py-1 border border-gray-400;
+}
+.markdown tr:nth-child(odd) {
+  @apply bg-gray-100;
+}
+.markdown table {
+  @apply mb-6;
+}
+
+/* Wrap any inline highlights `that are really long`, but don't modify
+   the setting for codeblocks (inside ```), which are rendered in as:
+   <pre><code>...
+*/
+.markdown :not(pre) > code.language-text {
+  white-space: pre-line;
 }
