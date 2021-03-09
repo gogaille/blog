@@ -15,7 +15,7 @@
 }
 
 .markdown blockquote {
-  @apply p-4 mx-0 bg-accent-1 text-white mb-4 border-l-4 border-accent-3 italic;
+  @apply p-4 mx-0 bg-tertiary text-primary mb-4 border-l-4 border-accent-1 italic;
 }
 
 .markdown blockquote > p {
@@ -27,11 +27,11 @@
 }
 
 .markdown p strong {
-  @apply text-primary;
+  @apply text-secondary;
 }
 
 .markdown blockquote > p strong {
-  @apply text-white font-bold;
+  @apply text-primary font-bold;
 }
 
 .markdown h1 {

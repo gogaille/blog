@@ -5,9 +5,9 @@ module.exports = {
     extend: {
       backgroundColor: theme => ({
         ...theme('colors'),
-        "primary": "#FFFFFF",
-        "secondary": "#FEFCFA",
-        "tertiary": "#F6F2F0",
+        "primary": "#FFFFFF",   // WHITE
+        "secondary": "#FEFCFA", // CREAM
+        "tertiary": "#F6F2F0",  // CREAM DARK
       }),
       colors: {
         // Brand color - nominal
