@@ -1,5 +1,4 @@
 import { NextSeo } from "next-seo";
-import ReactUtterences from "react-utterances";
 import Container from "../../components/container";
 import PostBody from "../../components/post-body";
 import Header from "../../components/header";
@@ -12,6 +11,7 @@ import { Post as PostType } from "../../domain/post";
 import { postRoute } from "../../lib/routes";
 
 import "highlight.js/styles/hybrid.css";
+import Utterances from "../../components/utterances";
 
 type Props = {
   post: PostType;
@@ -64,9 +64,10 @@ const Post = ({ post }: Props) => {
             Comments
           </p>
 
-          <ReactUtterences
-            repo={"gogaille/blog"}
-            type={"pathname"}
+          <Utterances
+            repo="gogaille/blog"
+            issueTerm="pathname"
+            theme="github-light"
             label="discussions"
           />
         </div>
