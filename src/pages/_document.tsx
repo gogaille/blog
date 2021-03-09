@@ -8,6 +8,13 @@ export default class MyDocument extends Document {
         <body className="bg-primary text-primary">
           <Main />
           <NextScript />
+
+          <script src="https://getinsights.io/js/insights.js"></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `insights.init("nKQvSs_BBESe7Jbn", { disabled: "${process.env.NODE_ENV}" !== "production" }); insights.trackPages();`,
+            }}
+          />
         </body>
       </Html>
     );
