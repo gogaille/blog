@@ -1,8 +1,8 @@
 import { AppProps } from "next/app";
 import { DefaultSeo } from "next-seo";
-import { BLOG_TITLE, BLOG_URL, META_DESCRIPTION } from "../lib/constants";
+import { BLOG_TITLE, BLOG_URL, META_DESCRIPTION } from "../src/globals";
 
-import "../styles/index.css";
+import "../src/styles/index.css";
 
 export default function GogailleBlogApp({
   Component,

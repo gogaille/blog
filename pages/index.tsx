@@ -1,14 +1,14 @@
 import fs from "fs";
-import Container from "../components/container";
-import MoreStories from "../components/more-stories";
-import HeroPost from "../components/hero-post";
-import Intro from "../components/intro";
-import Layout from "../components/layout";
-import { getAllPostSummaries } from "../lib/api";
+import Container from "../src/components/container";
+import MoreStories from "../src/components/more-stories";
+import HeroPost from "../src/components/hero-post";
+import Intro from "../src/components/intro";
+import Layout from "../src/components/layout";
+import { getAllPostSummaries } from "../src/api";
 import Head from "next/head";
-import { BLOG_TITLE, BLOG_URL } from "../lib/constants";
-import { PostSummary } from "../domain/post";
-import { generateFeed } from "../lib/feed";
+import { BLOG_TITLE, BLOG_URL } from "../src/globals";
+import { PostSummary } from "../src/domain/post";
+import { generateFeed } from "../src/feed";
 
 type Props = {
   allPosts: Array<PostSummary>;

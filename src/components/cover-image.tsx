@@ -1,6 +1,6 @@
 import cn from "classnames";
 import Link from "next/link";
-import { postRoute } from "../lib/routes";
+import { postRoute } from "../routes";
 
 type Props = {
   title: string;

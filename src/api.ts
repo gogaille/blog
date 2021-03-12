@@ -2,9 +2,9 @@ import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
 import readingTime from "reading-time";
-import { Post, PostSummary, guardPostPayload } from "../domain/post";
+import { Post, PostSummary, validatePostPayload } from "./domain/post";
 
-const postsDirectory = join(process.cwd(), "_posts");
+const postsDirectory = join(process.cwd(), "content/posts");
 
 function convertFileNameToSlug(filename: string): string {
   return filename.replace(/\.md$/, "");
@@ -19,7 +19,7 @@ export function getPostBySlug(slug: string): Post {
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data: headers, content: contentInMarkdown } = matter(fileContents);
 
-  const postPayload: Post = {
+  const postPayload = validatePostPayload({
     slug,
     lang: headers.lang,
     title: headers.title,
@@ -30,9 +30,7 @@ export function getPostBySlug(slug: string): Post {
     author: headers.author,
     content: contentInMarkdown,
     readingTime: readingTime(contentInMarkdown).text,
-  };
-
-  guardPostPayload(postPayload);
+  });
 
   return postPayload;
 }

@@ -1,17 +1,17 @@
 import { NextSeo } from "next-seo";
-import Container from "../../components/container";
-import PostBody from "../../components/post-body";
-import Header from "../../components/header";
-import PostHeader from "../../components/post-header";
-import Layout from "../../components/layout";
-import { getPostBySlug, getAllPostSummaries } from "../../lib/api";
-import { BLOG_URL } from "../../lib/constants";
-import markdownToHtml from "../../lib/markdownToHtml";
-import { Post as PostType } from "../../domain/post";
-import { postRoute } from "../../lib/routes";
+import Container from "../../src/components/container";
+import PostBody from "../../src/components/post-body";
+import Header from "../../src/components/header";
+import PostHeader from "../../src/components/post-header";
+import Layout from "../../src/components/layout";
+import { getPostBySlug, getAllPostSummaries } from "../../src/api";
+import { BLOG_URL } from "../../src/globals";
+import markdownToHtml from "../../src/markdown";
+import { Post as PostType } from "../../src/domain/post";
+import { postRoute } from "../../src/routes";
 
 import "highlight.js/styles/hybrid.css";
-import Utterances from "../../components/utterances";
+import Utterances from "../../src/components/utterances";
 
 type Props = {
   post: PostType;
