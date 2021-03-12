@@ -1,4 +1,4 @@
-import { BLOG_TITLE, BLOG_SUBTITLE } from "../lib/constants";
+import { BLOG_TITLE, BLOG_SUBTITLE } from "../globals";
 
 const Intro = () => {
   return (

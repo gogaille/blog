@@ -1,4 +1,4 @@
-import Joi from "joi";
+import * as z from "zod";
 import { Author } from "./author";
 
 export interface PostSummary {
@@ -17,31 +17,28 @@ export interface Post extends PostSummary {
   content: string;
 }
 
-const postSchema = Joi.object({
-  lang: Joi.string().allow("en", "fr"),
-  slug: Joi.string()
-    .pattern(/^[a-zA-Z0-9\-]+$/)
-    .min(5),
-  title: Joi.string(),
-  content: Joi.string(),
-  excerpt: Joi.string(),
-  coverImage: Joi.string(),
-  coverImageAlt: Joi.string(),
-  date: Joi.string().isoDate(),
-  author: Joi.object({
-    name: Joi.string(),
-    picture: Joi.string(),
-    twitterHandle: Joi.string().pattern(/^@[a-zA-Z0-9\-]+$/),
+const postSchema = z
+  .object({
+    lang: z.enum(["en", "fr"]),
+    slug: z
+      .string()
+      .regex(/^[a-zA-Z0-9\-]+$/)
+      .min(5),
+    title: z.string(),
+    content: z.string(),
+    excerpt: z.string(),
+    coverImage: z.string(),
+    coverImageAlt: z.string(),
+    date: z.string(), // TODO: validate date shape
+    author: z.object({
+      name: z.string(),
+      picture: z.string(),
+      twitterHandle: z.string().regex(/^@[a-zA-Z0-9\-]+$/),
+    }),
+    readingTime: z.string(),
   })
-    .options({ presence: "required" })
-    .unknown(false),
-  readingTime: Joi.string(),
-})
-  .options({ presence: "required" })
-  .unknown(false);
+  .strict();
 
-export function guardPostPayload(
-  postPayload: any,
-): asserts postPayload is Post {
-  Joi.assert(postPayload, postSchema);
+export function validatePostPayload(maybePostPayload: unknown): Post {
+  return postSchema.parse(maybePostPayload);
 }

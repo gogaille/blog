@@ -3,7 +3,7 @@ import DateFormatter from "./date-formatter";
 import CoverImage from "./cover-image";
 import Link from "next/link";
 import { Author } from "../domain/author";
-import { postRoute } from "../lib/routes";
+import { postRoute } from "../routes";
 import ReadingTime from "./reading-time";
 
 type Props = {

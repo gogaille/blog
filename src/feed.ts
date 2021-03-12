@@ -1,7 +1,7 @@
 import { Feed as FeedBuilder } from "feed";
-import { BLOG_TITLE, META_DESCRIPTION } from "./constants";
+import { BLOG_TITLE, META_DESCRIPTION } from "./globals";
 import { postRoute } from "./routes";
-import { PostSummary } from "../domain/post";
+import { PostSummary } from "./domain/post";
 
 export function generateFeed(
   allPosts: Array<PostSummary>,
