@@ -11,7 +11,7 @@ author:
   twitterHandle: "@timbarray"
 ---
 
-Après 1 an, la tête dans le guidon, il était temps de ralentir un peu et prendre le temps de partager un peu l'aventure qui a rassemblée une partie de l'ancienne équipe tech de VeryLastRoom :
+Après 1 an, la tête dans le guidon, il était temps de ralentir un peu et prendre le temps de partager sur l'aventure qui a rassemblé une partie de l'ancienne équipe tech de VeryLastRoom :
 
 - [Sébastien Houzé](https://twitter.com/sebastienhouze) : CTO à tout (bien) faire
 - [Armand Abric](https://twitter.com/armandabric) : Fullstack affinité js
