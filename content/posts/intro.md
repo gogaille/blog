@@ -1,0 +1,127 @@
+---
+lang: "fr"
+title: "Soyez les bienvenus"
+excerpt: "Qui sommes nous ? Qu'est-ce qu'on fait ? De quoi on va parler ? Commençons par les présentations !"
+coverImage: "/assets/blog/intro/begin.jpg"
+coverImageAlt: "Vous prendrez bien un ptit café"
+date: "2021-03-01T10:01:00.322Z"
+author:
+  name: Timothée Barray
+  picture: "/assets/blog/authors/tyx.jpg"
+  twitterHandle: "@timbarray"
+---
+
+Après 1 an, la tête dans le guidon, il était temps de ralentir un peu et prendre le temps de partager un peu l'aventure qui a rassemblée une partie de l'ancienne équipe tech de VeryLastRoom :
+
+- [Sébastien Houzé](https://twitter.com/sebastienhouze) : CTO à tout (bien) faire
+- [Armand Abric](https://twitter.com/armandabric) : Fullstack affinité js
+- et moi-même, [Timothée Barray](https://twitter.com/timbarray) : Backend développeur, bidouilleur de js
+
+Et 2 nouvelles recrues bientôt ! On a hâte !
+
+# Contexte
+
+Début 2020 (avant covid and co) nous signons tous les 3 pour rejoindre une entreprise bordelaise : [French Hospitality](https://french-hospitality.fr).
+
+Notre mission ? Repartir de zéro pour (re)produire tout le SI d'une chaîne d'hôtel avec la volonté depuis le début de pouvoir automatiser et basculer dans le numérique la plus grande majorité des process d'un métier qui a encore du mal à sauter le pas du 21e siècle.
+
+Loin de nous l'idée de réinventer la roue par contre ! Aujourd'hui il existe un grand nombre de logiciels pour réaliser une bonne partie de ce travail.
+
+Mais l'idée de pouvoir tout rationaliser dans un seul endroit et éviter le syndrome du multi backoffice nous semblait importante dans notre quête d'optimisation.
+
+De l’autre côté, on pouvait alors s’attacher à découvrir ce domaine métier et modéliser avec le plus grand soin l’aspect différenciant de notre concept.
+
+[Gogaille](https://www.gogaille.com/) était né.
+
+# De quoi ça s'agit ?
+
+Nous sommes tous les 3 très attachés à la notion de partage et nous avons été heureux de pouvoir contribuer au cours de l’année à différents logiciels que nous utilisons dans nos applications, comme [Bref](https://bref.sh/), [AsyncAws](https://async-aws.com/) ou même [Symfony](https://symfony.com/). Mais on s'est vite dit qu'on aimerait apporter plus encore et l'idée d'un blog nous trottait dans la tête depuis un moment.
+
+Nous allons donc partager ici ce qui nous passionne ou nous anime selon nos envies.
+
+Les sujets tourneront forcément autour de notre pile logicielle, de nos expérimentations et des défis qu’on doit relever.
+
+![Construction de légo](/assets/blog/intro/lego.jpg)
+
+## Briques logicielles
+
+Histoire de vous donner un avant goût, on peut vous présenter un peu l’application comme elle est aujourd’hui après 1000 commits (et à peu près autant de pull requests pour vous donner une idée).
+
+Toutes nos briques applicatives sont regroupées dans un [monorepo](https://github.com/korfuri/awesome-monorepo) sur Github. Que des avantages et on est loin d’avoir une taille qui pourrait poser problème.
+
+On pourra parler un peu de chacune de ces briques dans un billet dédié (si ça vous intéresse dites le nous) mais dans les grandes lignes :
+
+### API Rest
+
+Elle est en PHP 8 avec Symfony 5. C’était la solution qu’on maitrise le plus et dont on est globalement satisfait.
+
+On utilise [Api-Platform](https://api-platform.com/) pour la couche REST mais sans doctrine (ni aucune base de données relationnelle). C’était ici notre première expérience. Et après un petit bench en début de projet on s’est dit que ça pouvait valoir le coup.
+
+On va pas se mentir, on a un peu bataillé, sortant du cadre défini de APIP (ni doctrine ni crud), mais on a aujourd’hui quelque chose de fonctionnel et qui nous apporte une plus value. Est-ce qu’on va le garder à terme ? La concurrence étant maigre, la seule alternative serait de le coder… Wait and see.
+
+L’application en elle même est structurée selon les principes du Monolithe Modulaire. J’ai donné [une conférence au Symfony Live 2020](https://symfonycasts.com/screencast/paris2020/monolithe-modulaire-pourquoi-comment) si le sujet vous intéresse. On en reparlera certainement ici aussi ;)
+
+Pour la partie Serverless, on utilise l'incontournable Bref. Merci [Matthieu](https://twitter.com/matthieunapoli) pour cette superbe librairie !
+
+### Client Web
+
+Côté client, pas de surprise on utilise React mais avec du Typescript qui apporte un vrai confort grâce à son système de Typage. Le tout géré par [Next.js](https://nextjs.org) pour avoir un cadre de travail agréable.
+
+On utilise [Vercel](https://vercel.com) pour l’hébergement. Je laisserai le soin à Armand d’en parler plus longuement dans un prochain billet moi je fais que bidouiller cette partie :D
+
+### Client “lourd”
+
+À destination de tablette pour prendre place dans les halls de nos hôtels en tant que borne de réservation. C’est en fait aussi un client web (propulsé par [create-react-app](https://create-react-app.dev)) mais avec une interface adaptée aux spécificités du medium : espace publique (session courte) et écran tactile. Au stade de prototype pour l’instant.
+
+### Un CMS Headless
+
+Toujours dans un souci de ne coder que les choses importantes, on a délégué toute la gestion CRUD (et il fait même beaucoup plus) à un CMS Headless : [Sanity.io](https://www.sanity.io/).
+
+Un vrai bijou, ce fut la très bonne surprise de nos expérimentations.
+
+On l’a éprouvé de longs mois et il coche toutes les cases pour devenir le backoffice de la partie “Contenu” de nos systèmes.
+
+### Une application Zendesk
+
+Même principe. On ne veut surtout pas produire et maintenir un backoffice dans son ensemble. On a pas l’équipe pour et la plus value n'est de toute façon pas justifiée à notre sens.
+
+On utilise donc [Zendesk](https://www.zendesk.fr/) comme outil de support avec une première application custom qui permet d'interagir avec notre API sans quitter Zendesk. Typiquement : Pour annuler la réservation d’un client.
+
+![Lancement de fusée en légo](/assets/blog/intro/rocket.jpg)
+
+## Infrastructure
+
+Côté serveur, on en a pas… On utilise AWS et massivement du Serverless. Pourquoi ? Parce qu’on est aujourd’hui que 3, et passer du temps à s’occuper des serveurs ne nous semblait pas optimal dans un premier temps.  
+Pour information on avait démarré avec des images Docker déployées sur [ECS](https://aws.amazon.com/ecs). C'était dommage d'avoir autant de services qui tournaient 24/7 surtout pour une pré-production.
+Et la promesse du Serverless a finalement été plutôt remplie pour nos besoins.
+
+> C'était dommage d'avoir autant de services qui tournaient 24/7 surtout pour une pré-production.
+
+Côté base de données, on utilise aujourd’hui principalement du [DynamoDb](https://aws.amazon.com/dynamodb). Et on se sert de notre CMS comme stockage de certaines données qui demandent à être pilotées via un CRUD. Typiquement nos catégories de chambres.
+
+Pour le messaging, [SQS](https://aws.amazon.com/sqs) coche toutes les cases pour l’instant.
+
+Par contre, on utilise [terraform](https://www.terraform.io/) pour facilement provisionner tout ça. On a payé le prix au début du projet mais aujourd’hui force est de constater que tout roule.  
+Le grand plus ? Avoir dans la pull request un aperçu en mode "diff" de ce qui va changer sur l'infrastructure lorsqu'on va merger et donc de faire de la revue d'infra au même endroit que la revue de code.
+
+## Workflow
+
+Qui dit Github, dit [Github Actions](https://github.com/features/actions) dont on est également ravi. On s’en sert pour lancer les suites de tests de chacune de nos applis et on a réussi aujourd’hui à optimiser cette partie pour ne lancer que les tests propres à la PR en cours. Un des défis quand on utilise un monorepo.
+
+Après le merge, tout ça part en prod directement. Via terraform et Vercel.
+
+Évidemment, chaque PR doit être relue par une personne pour être mergeable. On utilise d'ailleurs depuis récemment l'auto merge de github qui fait le travail. D'ailleurs on utilise aussi la stratégie `Squash And Merge` par défaut, et qui permet de produire un historique vraiment propre.
+
+Côté organisation, on est sur des sprints de 2 semaines avec des points démo avec toute l'équipe. N'étant pas encore en prod "réelle" on s'attache tout de même à s'occuper de notre preprod comme une vrai prod en la gardant 100% fonctionnelle pour que chacun puisse l'utiliser à tout moment.
+
+![Panneau indiquant This way](/assets/blog/intro/way.jpg)
+
+## La suite
+
+N'attendez pas un article par semaine, mais l'idée est quand même de faire quelque chose de régulier. 1 par mois serait déjà une réussite.
+
+On essaiera de varier les sujets techniques et ceux plus méta et si possible qui vous intéressent. Alors n'hésitez pas à laisser des commentaires ou nous interpeler sur twitter.
+
+Attendez vous à du contenu en français et en anglais. Chacun est libre dans l'équipe de contribuer dans la langue qui lui convient.
+
+À très vite !
