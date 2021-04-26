@@ -2,17 +2,17 @@ import Avatar from "./avatar";
 import DateFormatter from "./date-formatter";
 import CoverImage from "./cover-image";
 import Link from "next/link";
-import { Author } from "../domain/author";
 import { postRoute } from "../routes";
 import ReadingTime from "./reading-time";
+import { Author } from "../../src/types";
 
-type Props = {
+type HeroPostProps = {
   lang: string;
   title: string;
   coverImage: string;
   date: string;
   excerpt: string;
-  author: Author;
+  author?: Author;
   slug: string;
   readingTime: string;
 };
@@ -26,7 +26,7 @@ const HeroPost = ({
   author,
   slug,
   readingTime,
-}: Props) => {
+}: HeroPostProps) => {
   return (
     <section lang={lang}>
       <div className="mb-8 md:mb-16">
@@ -44,11 +44,14 @@ const HeroPost = ({
             <ReadingTime text={readingTime} />
           </div>
         </div>
+
         <div>
           <p className="text-lg leading-relaxed mb-4 prose max-w-none text-primary">
             {excerpt}
           </p>
-          <Avatar name={author.name} picture={author.picture} />
+          {author ? (
+            <Avatar name={author.name} picture={author.picture} />
+          ) : null}
         </div>
       </div>
     </section>
