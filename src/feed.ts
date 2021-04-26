@@ -1,10 +1,10 @@
 import { Feed as FeedBuilder } from "feed";
 import { BLOG_TITLE, META_DESCRIPTION } from "./globals";
 import { postRoute } from "./routes";
-import { PostSummary } from "./domain/post";
+import { PostNode } from "../src/types";
 
 export function generateFeed(
-  allPosts: Array<PostSummary>,
+  allPostNodes: Array<PostNode>,
   publicPath: string,
 ): FeedBuilder {
   const feed = new FeedBuilder({
@@ -16,8 +16,14 @@ export function generateFeed(
     ttl: 24,
   });
 
-  allPosts.forEach(({ title, excerpt, date, coverImage, slug, author }) => {
-    const postLink = publicPath + postRoute(slug);
+  allPostNodes.forEach((postNode) => {
+    if (postNode.frontMatter === undefined) {
+      throw new Error("Invalid PostNost: the `frontMatter` entry is necessary");
+    }
+
+    const { title, slug, excerpt, date, coverImage } = postNode.frontMatter;
+
+    const postLink = publicPath + postRoute(postNode.slug);
 
     feed.addItem({
       guid: postLink,
@@ -26,8 +32,12 @@ export function generateFeed(
       description: excerpt,
       image: `${publicPath}${coverImage}`,
       date: new Date(date),
-      author: [{ name: author.name }],
+      // The author is not visible in the RSS feed
+      author: postNode.relationships?.author.map((oneAuthor) => ({
+        name: oneAuthor.frontMatter?.name,
+      })),
     });
   });
+
   return feed;
 }

@@ -1,51 +1,56 @@
 import fs from "fs";
+import { getAllNodes } from "next-mdx/server";
+import readingTime from "reading-time";
 import Container from "../src/components/container";
 import MoreStories from "../src/components/more-stories";
 import HeroPost from "../src/components/hero-post";
 import Intro from "../src/components/intro";
 import Layout from "../src/components/layout";
-import { getAllPostSummaries } from "../src/api";
-import Head from "next/head";
-import { BLOG_TITLE, BLOG_URL } from "../src/globals";
-import { PostSummary } from "../src/domain/post";
+import { BLOG_URL } from "../src/globals";
 import { generateFeed } from "../src/feed";
+import { PostNode } from "../src/types";
 
-type Props = {
-  allPosts: Array<PostSummary>;
+type IndexPageProps = {
+  allPosts: Array<PostNode>;
 };
 
-const Index = ({ allPosts }: Props) => {
-  const heroPost = allPosts[0];
-  const morePosts = allPosts.slice(1);
+const IndexPage = ({ allPosts }: IndexPageProps) => {
+  const heroPostNode = allPosts[0];
+  const morePostNodes = allPosts.slice(1);
+
+  if (heroPostNode && !heroPostNode.frontMatter) {
+    throw new Error("Invalid PostNode: missing frontMatter entry");
+  }
+
+  const heroPost = heroPostNode.frontMatter;
+  const author = heroPostNode.relationships?.author[0].frontMatter;
 
   return (
-    <>
-      <Layout>
-        <Container>
-          <Intro />
-          {heroPost && (
-            <HeroPost
-              lang={heroPost.lang}
-              title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              author={heroPost.author}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
-              readingTime={heroPost.readingTime}
-            />
-          )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-        </Container>
-      </Layout>
-    </>
+    <Layout>
+      <Container>
+        <Intro />
+        {heroPost && (
+          <HeroPost
+            lang={heroPost.lang}
+            title={heroPost.title}
+            coverImage={heroPost.coverImage}
+            date={heroPost.date}
+            author={author}
+            slug={heroPostNode.slug}
+            excerpt={heroPost.excerpt}
+            readingTime={readingTime(heroPostNode.content ?? "").text}
+          />
+        )}
+        {morePostNodes.length > 0 && <MoreStories postNodes={morePostNodes} />}
+      </Container>
+    </Layout>
   );
 };
 
-export default Index;
+export default IndexPage;
 
 export const getStaticProps = async () => {
-  const allPosts = getAllPostSummaries();
+  const allPosts = await getAllNodes<PostNode>("post");
 
   const feed = await generateFeed(allPosts, BLOG_URL || "");
   fs.writeFileSync("./public/feed/rss.xml", feed.rss2());

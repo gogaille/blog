@@ -1,8 +1,9 @@
 import classnames from "classnames";
+import React from "react";
 import markdownStyles from "./markdown-styles.module.css";
 
 type Props = {
-  content: string;
+  content: React.ReactNode;
 };
 
 const PostBody = ({ content }: Props) => {
@@ -13,8 +14,9 @@ const PostBody = ({ content }: Props) => {
           markdownStyles["markdown"],
           "prose max-w-none prose-2xl",
         )}
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
+      >
+        {content}
+      </div>
     </div>
   );
 };

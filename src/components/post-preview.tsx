@@ -2,7 +2,7 @@ import Avatar from "./avatar";
 import DateFormatter from "./date-formatter";
 import CoverImage from "./cover-image";
 import Link from "next/link";
-import { Author } from "../domain/author";
+import { Author } from "../../src/types";
 import { postRoute } from "../routes";
 import ReadingTime from "./reading-time";
 
@@ -12,7 +12,7 @@ type Props = {
   coverImage: string;
   date: string;
   excerpt: string;
-  author: Author;
+  author?: Author;
   slug: string;
   readingTime: string;
 };
@@ -42,7 +42,7 @@ const PostPreview = ({
         <ReadingTime text={readingTime} />
       </div>
       <p className="text-lg leading-relaxed mb-4 prose max-w-none">{excerpt}</p>
-      <Avatar name={author.name} picture={author.picture} />
+      {author ? <Avatar name={author.name} picture={author.picture} /> : null}
     </div>
   );
 };
