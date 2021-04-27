@@ -23,7 +23,6 @@ const IndexPage = ({ allPosts }: IndexPageProps) => {
   }
 
   const heroPost = heroPostNode.frontMatter;
-  const author = heroPostNode.relationships?.author[0].frontMatter;
 
   return (
     <Layout>
@@ -35,7 +34,7 @@ const IndexPage = ({ allPosts }: IndexPageProps) => {
             title={heroPost.title}
             coverImage={heroPost.coverImage}
             date={heroPost.date}
-            author={author}
+            authors={heroPostNode.relationships?.author ?? []}
             slug={heroPostNode.slug}
             excerpt={heroPost.excerpt}
             readingTime={readingTime(heroPostNode.content ?? "").text}
