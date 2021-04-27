@@ -13,6 +13,7 @@ import { postRoute } from "../../src/routes";
 
 import Utterances from "../../src/components/utterances";
 import { PostMdxNode } from "../../src/types";
+import "highlight.js/styles/hybrid.css";
 
 type PostPageProps = { postNode: PostMdxNode };
 
@@ -100,7 +101,11 @@ type Params = NodeJS.Dict<string[]>;
 export const getStaticProps: GetStaticProps<PostPageProps, Params> = async (
   context,
 ) => {
-  const postNode = await getMdxNode<PostMdxNode>("post", context);
+  const postNode = await getMdxNode<PostMdxNode>("post", context, {
+    mdxOptions: {
+      rehypePlugins: [require("rehype-highlight")],
+    },
+  });
 
   if (!postNode) {
     return {
