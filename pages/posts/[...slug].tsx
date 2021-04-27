@@ -24,10 +24,7 @@ const PostPage: NextPage<PostPageProps> = ({ postNode }: PostPageProps) => {
   }
 
   const post = postNode.frontMatter;
-  const author = postNode.relationships?.author[0].frontMatter;
-  if (!author) {
-    throw new Error("No author");
-  }
+  const authors = postNode.relationships?.author;
 
   if (!post) {
     throw new Error("No Post");
@@ -59,7 +56,6 @@ const PostPage: NextPage<PostPageProps> = ({ postNode }: PostPageProps) => {
           }}
           twitter={{
             cardType: "summary_large_image",
-            handle: author.twitterHandle,
           }}
         />
 
@@ -68,7 +64,7 @@ const PostPage: NextPage<PostPageProps> = ({ postNode }: PostPageProps) => {
             title={post.title}
             coverImage={post.coverImage}
             date={post.date}
-            author={author}
+            authors={authors || []}
             readingTime={readingTime(postNode.content ?? "").text}
           />
           <PostBody content={content} />

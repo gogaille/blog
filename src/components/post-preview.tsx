@@ -1,18 +1,18 @@
-import Avatar from "./avatar";
+import Authors from "./author";
 import DateFormatter from "./date-formatter";
 import CoverImage from "./cover-image";
 import Link from "next/link";
-import { Author } from "../../src/types";
+import { AuthorNode } from "../../src/types";
 import { postRoute } from "../routes";
 import ReadingTime from "./reading-time";
 
-type Props = {
+type PostPreviewProps = {
   lang: string;
   title: string;
   coverImage: string;
   date: string;
   excerpt: string;
-  author?: Author;
+  authors: AuthorNode[];
   slug: string;
   readingTime: string;
 };
@@ -23,10 +23,10 @@ const PostPreview = ({
   coverImage,
   date,
   excerpt,
-  author,
+  authors,
   slug,
   readingTime,
-}: Props) => {
+}: PostPreviewProps) => {
   return (
     <div lang={lang}>
       <div className="mb-5">
@@ -42,7 +42,7 @@ const PostPreview = ({
         <ReadingTime text={readingTime} />
       </div>
       <p className="text-lg leading-relaxed mb-4 prose max-w-none">{excerpt}</p>
-      {author ? <Avatar name={author.name} picture={author.picture} /> : null}
+      <Authors authors={authors} />
     </div>
   );
 };

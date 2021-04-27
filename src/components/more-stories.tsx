@@ -19,7 +19,6 @@ const MoreStories = ({ postNodes }: Props) => {
           }
 
           const onePost = onePostNode.frontMatter;
-          const author = onePostNode.relationships?.author[0].frontMatter;
 
           return (
             <PostPreview
@@ -28,7 +27,7 @@ const MoreStories = ({ postNodes }: Props) => {
               title={onePost.title}
               coverImage={onePost.coverImage}
               date={onePost.date}
-              author={author}
+              authors={onePostNode.relationships?.author ?? []}
               slug={onePostNode.slug}
               excerpt={onePost.excerpt}
               readingTime={readingTime(onePostNode.content ?? "").text}

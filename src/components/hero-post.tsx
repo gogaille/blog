@@ -1,10 +1,10 @@
-import Avatar from "./avatar";
+import Authors from "./author";
 import DateFormatter from "./date-formatter";
 import CoverImage from "./cover-image";
 import Link from "next/link";
 import { postRoute } from "../routes";
 import ReadingTime from "./reading-time";
-import { Author } from "../../src/types";
+import { AuthorNode } from "../../src/types";
 
 type HeroPostProps = {
   lang: string;
@@ -12,7 +12,7 @@ type HeroPostProps = {
   coverImage: string;
   date: string;
   excerpt: string;
-  author?: Author;
+  authors: AuthorNode[];
   slug: string;
   readingTime: string;
 };
@@ -23,7 +23,7 @@ const HeroPost = ({
   coverImage,
   date,
   excerpt,
-  author,
+  authors,
   slug,
   readingTime,
 }: HeroPostProps) => {
@@ -49,9 +49,7 @@ const HeroPost = ({
           <p className="text-lg leading-relaxed mb-4 prose max-w-none text-primary">
             {excerpt}
           </p>
-          {author ? (
-            <Avatar name={author.name} picture={author.picture} />
-          ) : null}
+          <Authors authors={authors} />
         </div>
       </div>
     </section>
