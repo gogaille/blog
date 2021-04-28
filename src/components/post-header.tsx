@@ -1,13 +1,13 @@
 import Authors from "./author";
 import DateFormatter from "./date-formatter";
-import CoverImage from "./cover-image";
+import { PostHeaderImage } from "./cover-image";
 import PostTitle from "./post-title";
-import { AuthorNode } from "../../src/types";
+import { AuthorNode, CoverImage } from "../../src/types";
 import ReadingTime from "./reading-time";
 
 type Props = {
   title: string;
-  coverImage: string;
+  coverImage: CoverImage;
   date: string;
   authors: AuthorNode[];
   readingTime: string;
@@ -27,7 +27,12 @@ const PostHeader = ({
         <Authors authors={authors} />
       </div>
       <div className="mb-8 md:mb-16 sm:mx-0">
-        <CoverImage title={title} src={coverImage} />
+        <PostHeaderImage
+          src={coverImage.src}
+          alt={coverImage.alt}
+          width={coverImage.width}
+          height={coverImage.height}
+        />
       </div>
       <div className="max-w-2xl mx-auto">
         <div className="block md:hidden mb-6">

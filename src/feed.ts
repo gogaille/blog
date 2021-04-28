@@ -30,7 +30,7 @@ export function generateFeed(
       link: postLink,
       title: title,
       description: excerpt,
-      image: `${publicPath}${coverImage}`,
+      image: `${publicPath}${coverImage.src}`,
       date: new Date(date),
       // The author is not visible in the RSS feed
       author: postNode.relationships?.author.map((oneAuthor) => ({

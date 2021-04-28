@@ -1,15 +1,15 @@
 import Authors from "./author";
 import DateFormatter from "./date-formatter";
-import CoverImage from "./cover-image";
+import { PreviewImage } from "./cover-image";
 import Link from "next/link";
 import { postRoute } from "../routes";
 import ReadingTime from "./reading-time";
-import { AuthorNode } from "../../src/types";
+import { AuthorNode, CoverImage } from "../../src/types";
 
 type HeroPostProps = {
   lang: string;
   title: string;
-  coverImage: string;
+  coverImage: CoverImage;
   date: string;
   excerpt: string;
   authors: AuthorNode[];
@@ -30,7 +30,14 @@ const HeroPost = ({
   return (
     <section lang={lang}>
       <div className="mb-8 md:mb-16">
-        <CoverImage title={title} src={coverImage} slug={slug} />
+        <PreviewImage
+          blogPostTitle={title}
+          imageSrc={coverImage.src}
+          imageAlt={coverImage.alt}
+          imageWidth={coverImage.width}
+          imageHeight={coverImage.height}
+          blogPostUrl={slug}
+        />
       </div>
       <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
         <div>

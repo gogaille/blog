@@ -15,8 +15,7 @@ export type Post = {
   slug: string;
   title: string;
   excerpt: string;
-  coverImage: string;
-  coverImageAlt: string;
+  coverImage: CoverImage;
   date: string;
   readingTime: string;
 };
@@ -31,4 +30,11 @@ export interface PostNode extends Node<Post> {
   relationships?: {
     author: AuthorNode[];
   };
+}
+
+export interface CoverImage {
+  src: string;
+  width: number;
+  height: number;
+  alt: string;
 }

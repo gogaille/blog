@@ -50,8 +50,8 @@ const PostPage: NextPage<PostPageProps> = ({ postNode }: PostPageProps) => {
             },
             images: [
               {
-                url: `${BLOG_URL}${post.coverImage}`,
-                alt: post.coverImageAlt,
+                url: `${BLOG_URL}${post.coverImage.src}`,
+                alt: post.coverImage.alt,
               },
             ],
           }}

@@ -3,11 +3,11 @@ module.exports = {
   purge: ["./src/components/**/*.tsx", "./src/pages/**/*.tsx"],
   theme: {
     extend: {
-      backgroundColor: theme => ({
-        ...theme('colors'),
-        "primary": "#FFFFFF",   // WHITE
-        "secondary": "#FEFCFA", // CREAM
-        "tertiary": "#F6F2F0",  // CREAM DARK
+      backgroundColor: (theme) => ({
+        ...theme("colors"),
+        primary: "#FFFFFF", // WHITE
+        secondary: "#FEFCFA", // CREAM
+        tertiary: "#F6F2F0", // CREAM DARK
       }),
       colors: {
         // Brand color - nominal
@@ -37,14 +37,14 @@ module.exports = {
         "7xl": "4.5rem",
         "8xl": "6.25rem",
       },
-      borderColor: theme => ({
-        "tertiary": "#DADADA",
+      borderColor: (theme) => ({
+        tertiary: "#DADADA",
         "tertiary-hover": "rgba(255, 255, 255, 0.1)",
       }),
       textColor: {
-        "primary": "#211747", // BLUE DARK
-        "secondary": "#807B96", // GREY
-        "tertiary": "#BCB9C8", // GREY LIGHT
+        primary: "#211747", // BLUE DARK
+        secondary: "#807B96", // GREY
+        tertiary: "#BCB9C8", // GREY LIGHT
         "primary-inverted": "#FFFFFF", // WHITE
         "secondary-inverted": "rgba(255, 255, 255, 0.8)", // WHITE-80
       },
