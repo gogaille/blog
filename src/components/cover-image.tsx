@@ -1,34 +1,68 @@
-import cn from "classnames";
 import Link from "next/link";
+import Image from "next/image";
 import { postRoute } from "../routes";
 
-type Props = {
-  title: string;
+type PostHeaderImageProps = {
   src: string;
-  slug?: string;
+  alt: string;
+  width: number;
+  height: number;
 };
 
-const CoverImage = ({ title, src, slug }: Props) => {
-  const image = (
-    <img
-      src={src}
-      alt={`Cover Image for ${title}`}
-      className={cn("shadow-small", {
-        "hover:shadow-medium transition-shadow duration-200": slug,
-      })}
-    />
-  );
+export const PostHeaderImage = ({
+  src,
+  alt,
+  width,
+  height,
+}: PostHeaderImageProps) => {
   return (
     <div className="sm:mx-0">
-      {slug ? (
-        <Link href={postRoute(slug)}>
-          <a aria-label={title}>{image}</a>
-        </Link>
-      ) : (
-        image
-      )}
+      <div className="relative w-full">
+        <Image
+          src={src}
+          alt={alt}
+          layout="responsive"
+          width={width}
+          height={height}
+        />
+      </div>
     </div>
   );
 };
 
-export default CoverImage;
+type PreviewImageProps = {
+  blogPostTitle: string;
+  blogPostUrl: string;
+  imageSrc: string;
+  imageAlt: string;
+  imageWidth: number;
+  imageHeight: number;
+  heroPostImage?: boolean;
+};
+
+export const PreviewImage = ({
+  blogPostTitle,
+  blogPostUrl,
+  imageSrc,
+  imageAlt,
+  imageWidth,
+  imageHeight,
+}: PreviewImageProps) => {
+  return (
+    <div className="sm:mx-0">
+      <div className="relative w-full hover:shadow-medium transition-shadow duration-200 shadow-small">
+        <Link href={postRoute(blogPostUrl)}>
+          <a aria-label={blogPostTitle}>
+            <Image
+              src={imageSrc}
+              alt={imageAlt}
+              layout="responsive"
+              width={imageWidth}
+              height={imageHeight}
+            />
+          </a>
+        </Link>
+      </div>
+    </div>
+  );
+};
