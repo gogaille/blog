@@ -50,19 +50,19 @@
   @apply text-tertiary;
 }
 
-.markdown a img {
+.markdown a > div {
   @apply shadow-small hover:shadow-medium transition-shadow duration-200;
 }
 
-.markdown img:not(:global .float-right) {
+.markdown div:not(:global .float-right) {
   @apply m-auto;
 }
 
-.markdown :global img.floating-right {
+.markdown :global div.floating-right {
   @apply m-0 ml-4 float-right;
 }
 
-.markdown :global img.floating-left {
+.markdown :global div.floating-left {
   @apply m-0 mr-4 float-left;
 }
 

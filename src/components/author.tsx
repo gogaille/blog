@@ -36,7 +36,13 @@ const Authors = ({ authors }: { authors: AuthorNode[] }) => {
         }
         const author = oneAuthorNode.frontMatter;
 
-        return <Author name={author.name} picture={author.picture} />;
+        return (
+          <Author
+            name={author.name}
+            picture={author.picture}
+            key={author.name}
+          />
+        );
       })}
     </div>
   );
