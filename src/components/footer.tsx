@@ -10,7 +10,7 @@ const Footer = () => {
             Follow our journey while we build the best customer & operations
             experiences of hospitality world.
           </h3>
-          <div className="flex flex-col lg:flex-row justify-end items-center lg:pl-4 lg:w-1/2">
+          <div className="flex flex-col lg:flex-row justify-end items-center lg:pl-4 lg:w-1/2 space-y-4 lg:space-y-0">
             <a
               href={rssFeedRoute()}
               className="mx-3 text-secondary-inverted font-bold hover:underline"
