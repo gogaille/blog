@@ -39,12 +39,12 @@ const PostPreview = ({
           imageHeight={coverImage.height}
         />
       </div>
-      <h3 className="text-3xl mb-3 leading-snug">
+      <h3 className="text-3xl mb-3 leading-snug  font-belly-display">
         <Link href={postRoute(slug)}>
           <a className="hover:underline">{title}</a>
         </Link>
       </h3>
-      <div className="text-lg mb-4 prose max-w-none">
+      <div className="text-lg mb-4 prose max-w-none text-secondary">
         <DateFormatter dateString={date} />
         <ReadingTime text={readingTime} />
       </div>

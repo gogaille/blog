@@ -8,7 +8,7 @@ type Props = {
 
 const PostBody = ({ content }: Props) => {
   return (
-    <div className="max-w-2xl mx-auto prose max-w-none prose-2xl">
+    <div className="max-w-2xl mx-auto prose max-w-none prose-2xl font-public-sans">
       <div
         className={classnames(
           markdownStyles["markdown"],

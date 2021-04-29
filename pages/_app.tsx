@@ -3,6 +3,7 @@ import { DefaultSeo } from "next-seo";
 import { BLOG_TITLE, BLOG_URL, META_DESCRIPTION } from "../src/globals";
 
 import "../src/styles/index.css";
+import "../src/styles/font.css";
 
 export default function GogailleBlogApp({
   Component,
