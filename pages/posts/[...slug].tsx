@@ -1,4 +1,5 @@
 import { NextSeo } from "next-seo";
+import BlogImage from "../../src/components/blog-image";
 import { useHydrate } from "next-mdx/client";
 import { getMdxNode, getMdxPaths } from "next-mdx/server";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next/types";
@@ -10,15 +11,17 @@ import PostHeader from "../../src/components/post-header";
 import Layout from "../../src/components/layout";
 import { BLOG_URL } from "../../src/globals";
 import { postRoute } from "../../src/routes";
-
 import Utterances from "../../src/components/utterances";
 import { PostMdxNode } from "../../src/types";
 import "highlight.js/styles/hybrid.css";
+import { components } from "../../src/MdxComponentBinding";
 
 type PostPageProps = { postNode: PostMdxNode };
 
 const PostPage: NextPage<PostPageProps> = ({ postNode }: PostPageProps) => {
-  const content = useHydrate(postNode);
+  const content = useHydrate(postNode, {
+    components,
+  });
 
   if (postNode && !postNode.frontMatter) {
     throw new Error("Invalid PostNode: missing frontMatter entry");
@@ -101,11 +104,14 @@ type Params = NodeJS.Dict<string[]>;
 export const getStaticProps: GetStaticProps<PostPageProps, Params> = async (
   context,
 ) => {
-  const postNode = await getMdxNode<PostMdxNode>("post", context, {
+  const mdxParams = {
+    components,
     mdxOptions: {
       rehypePlugins: [require("rehype-highlight")],
     },
-  });
+  };
+
+  const postNode = await getMdxNode<PostMdxNode>("post", context, mdxParams);
 
   if (!postNode) {
     return {
