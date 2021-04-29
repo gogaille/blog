@@ -75,9 +75,7 @@ const PostPage: NextPage<PostPageProps> = ({ postNode }: PostPageProps) => {
         </article>
 
         <div className="max-w-2xl mx-auto mb-32">
-          <p className="text-3xl text-primary mt-12 mb-4 font-extrabold">
-            Comments
-          </p>
+          <p className="text-3xl text-primary mt-12 mb-4 font-bold">Comments</p>
 
           <Utterances
             repo="gogaille/blog"

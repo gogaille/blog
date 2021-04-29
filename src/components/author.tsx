@@ -16,7 +16,9 @@ export const Author = ({
           height={48}
         />
       </div>
-      <div className="text-xl font-bold text-secondary">{name}</div>
+      <div className="text-xl font-public-sans font-bold text-secondary">
+        {name}
+      </div>
     </div>
   );
 };
