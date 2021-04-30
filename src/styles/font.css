@@ -1,47 +1,46 @@
 @font-face {
-    font-family: "Bely Display";
-    font-style: normal;
-    font-display: fallback;
-    font-weight: 400;
-    src: url("https://gogaille-fonts.vercel.app/bely-display-400.woff2")
-        format("woff2"),
-      url("https://gogaille-fonts.vercel.app/bely-display-400.woff")
-        format("woff");
-  }
-  @font-face {
-    font-family: "Public Sans";
-    font-style: normal;
-    font-display: fallback;
-    font-weight: 700;
-    src: url("https://gogaille-fonts.vercel.app/public-sans-700.woff2")
-        format("woff2"),
-      url("https://gogaille-fonts.vercel.app/public-sans-700.woff") format("woff");
-  }
-  @font-face {
-    font-family: "Public Sans";
-    font-style: normal;
-    font-display: fallback;
-    font-weight: 600;
-    src: url("https://gogaille-fonts.vercel.app/public-sans-600.woff2")
-        format("woff2"),
-      url("https://gogaille-fonts.vercel.app/public-sans-600.woff") format("woff");
-  }
-  @font-face {
-    font-family: "Public Sans";
-    font-style: normal;
-    font-display: fallback;
-    font-weight: 500;
-    src: url("https://gogaille-fonts.vercel.app/public-sans-500.woff2")
-        format("woff2"),
-      url("https://gogaille-fonts.vercel.app/public-sans-500.woff") format("woff");
-  }
-  @font-face {
-    font-family: "Public Sans";
-    font-style: normal;
-    font-display: fallback;
-    font-weight: 400;
-    src: url("https://gogaille-fonts.vercel.app/public-sans-400.woff2")
-        format("woff2"),
-      url("https://gogaille-fonts.vercel.app/public-sans-400.woff") format("woff");
-  }
-      
+  font-family: "Bely Display";
+  font-style: normal;
+  font-display: fallback;
+  font-weight: 400;
+  src: url("https://gogaille-fonts.vercel.app/bely-display-400.woff2")
+      format("woff2"),
+    url("https://gogaille-fonts.vercel.app/bely-display-400.woff")
+      format("woff");
+}
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-display: fallback;
+  font-weight: 700;
+  src: url("https://gogaille-fonts.vercel.app/public-sans-700.woff2")
+      format("woff2"),
+    url("https://gogaille-fonts.vercel.app/public-sans-700.woff") format("woff");
+}
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-display: fallback;
+  font-weight: 600;
+  src: url("https://gogaille-fonts.vercel.app/public-sans-600.woff2")
+      format("woff2"),
+    url("https://gogaille-fonts.vercel.app/public-sans-600.woff") format("woff");
+}
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-display: fallback;
+  font-weight: 500;
+  src: url("https://gogaille-fonts.vercel.app/public-sans-500.woff2")
+      format("woff2"),
+    url("https://gogaille-fonts.vercel.app/public-sans-500.woff") format("woff");
+}
+@font-face {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-display: fallback;
+  font-weight: 400;
+  src: url("https://gogaille-fonts.vercel.app/public-sans-400.woff2")
+      format("woff2"),
+    url("https://gogaille-fonts.vercel.app/public-sans-400.woff") format("woff");
+}
