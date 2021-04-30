@@ -22,6 +22,11 @@ export default function GogailleBlogApp({
           url: `${BLOG_URL}${router.asPath}`,
           title: BLOG_TITLE,
           description: META_DESCRIPTION,
+          images: [
+            {
+              url: `${BLOG_URL}/assets/gogaille-logo.png`,
+            },
+          ],
         }}
       />
       <Component {...pageProps} />
