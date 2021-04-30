@@ -1,3 +1,4 @@
+import React from "react";
 import { Author as AuthorType, AuthorNode } from "../../src/types";
 import Image from "next/image";
 

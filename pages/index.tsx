@@ -1,3 +1,4 @@
+import React from "react";
 import fs from "fs";
 import { getAllNodes } from "next-mdx/server";
 import readingTime from "reading-time";

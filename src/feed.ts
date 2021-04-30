@@ -21,7 +21,7 @@ export function generateFeed(
       throw new Error("Invalid PostNost: the `frontMatter` entry is necessary");
     }
 
-    const { title, slug, excerpt, date, coverImage } = postNode.frontMatter;
+    const { title, excerpt, date, coverImage } = postNode.frontMatter;
 
     const postLink = publicPath + postRoute(postNode.slug);
 

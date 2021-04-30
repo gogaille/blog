@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-empty-interface */
+
 import { MdxNode, Node } from "next-mdx/server";
 
 export type Author = {

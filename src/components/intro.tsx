@@ -1,3 +1,4 @@
+import React from "react";
 import { BLOG_TITLE, BLOG_SUBTITLE } from "../globals";
 
 const Intro = () => {
