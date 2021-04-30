@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import { AppProps } from "next/app";
 import { DefaultSeo } from "next-seo";
 import { BLOG_TITLE, BLOG_URL, META_DESCRIPTION } from "../src/globals";
@@ -13,6 +14,29 @@ export default function GogailleBlogApp({
 }: AppProps) {
   return (
     <>
+      <Head>
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="https://gogaille-fonts.vercel.app/bely-display-400.woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="https://gogaille-fonts.vercel.app/public-sans-700.woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          as="font"
+          type="font/woff2"
+          href="https://gogaille-fonts.vercel.app/public-sans-400.woff2"
+          crossOrigin="anonymous"
+        />
+      </Head>
       <DefaultSeo
         titleTemplate={`%s | ${BLOG_TITLE}`}
         defaultTitle={BLOG_TITLE}
