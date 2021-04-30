@@ -53,13 +53,13 @@ module.exports = {
         medium: "0 8px 30px rgba(0, 0, 0, 0.12)",
       },
       fontFamily: {
-        "belly-display": "Bely Display",
-        "public-sans": "Public Sans",
+        "belly-display": "'Bely Display', serif",
+        "public-sans": "'Public Sans', sans-serif",
       },
       typography: {
         DEFAULT: {
           css: {
-            fontFamily: "Public Sans",
+            fontFamily: "'Public Sans', sans-serif",
           },
         },
       },
