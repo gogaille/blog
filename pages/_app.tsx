@@ -17,6 +17,7 @@ export default function GogailleBlogApp({
         titleTemplate={`%s | ${BLOG_TITLE}`}
         defaultTitle={BLOG_TITLE}
         description={META_DESCRIPTION}
+        canonical={BLOG_URL}
         openGraph={{
           type: "website",
           url: `${BLOG_URL}${router.asPath}`,
