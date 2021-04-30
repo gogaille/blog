@@ -1,3 +1,4 @@
+import React from "react";
 import { AppProps } from "next/app";
 import { DefaultSeo } from "next-seo";
 import { BLOG_TITLE, BLOG_URL, META_DESCRIPTION } from "../src/globals";

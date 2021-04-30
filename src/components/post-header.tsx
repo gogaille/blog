@@ -1,3 +1,4 @@
+import React from "react";
 import Authors from "./author";
 import DateFormatter from "./date-formatter";
 import { PostHeaderImage } from "./cover-image";

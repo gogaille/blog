@@ -2,10 +2,6 @@ name: CI
 
 on: [pull_request]
 
-# defaults:
-#   run:
-#     working-directory: internet-booking-engine
-
 jobs:
   quality:
     name: Quality
@@ -20,7 +16,7 @@ jobs:
         run: yarn install --immutable --immutable-cache
       - name: Check coding standards
         run: yarn run format:check
-      # - name: Make static analysis (eslint)
-      #   run: yarn run eslint:check
+      - name: Make static analysis (eslint)
+        run: yarn run eslint:check
       - name: Make static analysis (typescript)
         run: yarn run typescript:check

@@ -1,3 +1,4 @@
+import React from "react";
 import { PostNode } from "../types";
 import PostPreview from "./post-preview";
 import readingTime from "reading-time";

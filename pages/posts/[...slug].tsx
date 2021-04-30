@@ -1,5 +1,5 @@
+import React from "react";
 import { NextSeo } from "next-seo";
-import BlogImage from "../../src/components/blog-image";
 import { useHydrate } from "next-mdx/client";
 import { getMdxNode, getMdxPaths } from "next-mdx/server";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next/types";
