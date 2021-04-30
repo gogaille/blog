@@ -18,6 +18,7 @@ export const BlogImage = ({
   if (width === undefined || height === undefined) {
     throw new Error("The image width and height are mandatory");
   }
+
   return (
     <div className={`sm:mx-0 ${className}`}>
       <div className="relative w-full h-auto">
