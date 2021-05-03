@@ -14,7 +14,6 @@ export interface AuthorNode extends Node<Author> {}
 
 export type Post = {
   lang: "en" | "fr";
-  slug: string;
   title: string;
   excerpt: string;
   coverImage: CoverImage;

@@ -42,7 +42,7 @@ const PostPage: NextPage<PostPageProps> = ({ postNode }: PostPageProps) => {
         <NextSeo
           title={post.title}
           description={post.excerpt}
-          canonical={`${BLOG_URL}${postRoute(post.slug)}`}
+          canonical={`${BLOG_URL}${postRoute(postNode.slug)}`}
           openGraph={{
             type: "article",
             title: post.title,
