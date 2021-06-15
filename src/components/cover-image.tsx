@@ -22,6 +22,8 @@ export const PostHeaderImage = ({
         <Image
           src={src}
           alt={alt}
+          placeholder="blur"
+          blurDataURL={src}
           layout="responsive"
           width={width}
           height={height}
