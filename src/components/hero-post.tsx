@@ -37,6 +37,7 @@ const HeroPost = ({
           imageAlt={coverImage.alt}
           imageWidth={coverImage.width}
           imageHeight={coverImage.height}
+          imageBlurDataUrl={coverImage.blurDataUrl}
           blogPostUrl={slug}
         />
       </div>

@@ -10,6 +10,7 @@ import Layout from "../src/components/layout";
 import { BLOG_URL } from "../src/globals";
 import { generateFeed } from "../src/feed";
 import { PostNode } from "../src/types";
+import { getPlaiceholder } from "plaiceholder";
 
 type IndexPageProps = {
   allPosts: Array<PostNode>;
@@ -55,7 +56,27 @@ export const getStaticProps = async () => {
   const feed = await generateFeed(allPosts, BLOG_URL || "");
   fs.writeFileSync("./public/feed/rss.xml", feed.rss2());
 
+  const withBlurDataUrl = async (post: PostNode) => {
+    const { base64 } = await getPlaiceholder(
+      post.frontMatter?.coverImage.src || "",
+    );
+    return {
+      ...post,
+      frontMatter: {
+        ...post.frontMatter,
+        coverImage: {
+          ...post.frontMatter?.coverImage,
+          blurDataUrl: base64,
+        },
+      },
+    };
+  };
+
+  const allPostsMan = async (posts: PostNode[]) => {
+    return Promise.all(posts.map((post) => withBlurDataUrl(post)));
+  };
+
   return {
-    props: { allPosts },
+    props: { allPosts: await allPostsMan(allPosts) },
   };
 };

@@ -1,3 +1,5 @@
+const { withPlaiceholder } = require("@plaiceholder/next");
+
 const vercelUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : undefined;
@@ -12,7 +14,7 @@ if (!vercelUrl && !publicPath) {
   );
 }
 
-module.exports = {
+module.exports = withPlaiceholder({
   env: {
     PUBLIC_PATH: publicPath ?? vercelUrl,
   },
@@ -28,4 +30,4 @@ module.exports = {
 
     return config;
   },
-};
+});

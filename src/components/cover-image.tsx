@@ -8,6 +8,7 @@ type PostHeaderImageProps = {
   alt: string;
   width: number;
   height: number;
+  blurDataUrl: string;
 };
 
 export const PostHeaderImage = ({
@@ -15,6 +16,7 @@ export const PostHeaderImage = ({
   alt,
   width,
   height,
+  blurDataUrl,
 }: PostHeaderImageProps) => {
   return (
     <div className="sm:mx-0">
@@ -23,7 +25,7 @@ export const PostHeaderImage = ({
           src={src}
           alt={alt}
           placeholder="blur"
-          blurDataURL={src}
+          blurDataURL={blurDataUrl}
           layout="responsive"
           width={width}
           height={height}
@@ -40,6 +42,7 @@ type PreviewImageProps = {
   imageAlt: string;
   imageWidth: number;
   imageHeight: number;
+  imageBlurDataUrl: string;
   heroPostImage?: boolean;
 };
 
@@ -50,6 +53,7 @@ export const PreviewImage = ({
   imageAlt,
   imageWidth,
   imageHeight,
+  imageBlurDataUrl,
 }: PreviewImageProps) => {
   return (
     <div className="sm:mx-0">
@@ -62,6 +66,8 @@ export const PreviewImage = ({
               layout="responsive"
               width={imageWidth}
               height={imageHeight}
+              placeholder="blur"
+              blurDataURL={imageBlurDataUrl}
             />
           </a>
         </Link>

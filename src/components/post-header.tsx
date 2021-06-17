@@ -33,6 +33,7 @@ const PostHeader = ({
           alt={coverImage.alt}
           width={coverImage.width}
           height={coverImage.height}
+          blurDataUrl={coverImage.blurDataUrl}
         />
       </div>
       <div className="max-w-2xl mx-auto">
