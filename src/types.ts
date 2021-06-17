@@ -1,3 +1,4 @@
+import { CoverImage } from './types';
 /* eslint-disable @typescript-eslint/no-empty-interface */
 
 import { MdxNode, Node } from "next-mdx/server";
@@ -38,4 +39,5 @@ export interface CoverImage {
   width: number;
   height: number;
   alt: string;
+  blurDataUrl?: string;
 }

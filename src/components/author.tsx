@@ -13,6 +13,8 @@ export const Author = ({
           src={picture}
           className="rounded-full"
           alt={name}
+          placeholder="blur"
+          blurDataURL={picture}
           width={48}
           height={48}
         />

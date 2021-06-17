@@ -15,6 +15,7 @@ import Utterances from "../../src/components/utterances";
 import { PostMdxNode } from "../../src/types";
 import "highlight.js/styles/hybrid.css";
 import { components } from "../../src/MdxComponentBinding";
+import { getPlaiceholder } from "plaiceholder";
 
 type PostPageProps = { postNode: PostMdxNode };
 
@@ -117,9 +118,22 @@ export const getStaticProps: GetStaticProps<PostPageProps, Params> = async (
     };
   }
 
+  const { base64 } = await getPlaiceholder(
+    postNode.frontMatter?.coverImage.src,
+  );
+
   return {
     props: {
-      postNode,
+      postNode: {
+        ...postNode,
+        frontMatter: {
+          ...postNode.frontMatter,
+          coverImage: {
+            ...postNode.frontMatter?.coverImage,
+            blurDataUrl: base64,
+          },
+        },
+      },
     },
   };
 };

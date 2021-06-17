@@ -1,3 +1,5 @@
+const { withPlaiceholder } = require("@plaiceholder/next");
+
 const vercelUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : undefined;
@@ -12,12 +14,9 @@ if (!vercelUrl && !publicPath) {
   );
 }
 
-module.exports = {
+module.exports = withPlaiceholder({
   env: {
     PUBLIC_PATH: publicPath ?? vercelUrl,
-  },
-  future: {
-    webpack5: true,
   },
   webpack: (config, { dev, isServer }) => {
     // Replace React with Preact only in client production build
@@ -31,4 +30,4 @@ module.exports = {
 
     return config;
   },
-};
+});
